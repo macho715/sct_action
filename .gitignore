@@ -1,0 +1,33 @@
+# Wrangler
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Secrets (절대 커밋 금지)
+*.pem
+*.key
+secrets/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (이 프로젝트는 의존성 없지만 미래 대비)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
