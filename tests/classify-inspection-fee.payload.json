@@ -1,0 +1,26 @@
+{
+  "lines": [
+    {
+      "line_id": "L-OVR-001",
+      "description": "CUSTOMS INSPECTION FEE",
+      "amount": 250.0,
+      "currency": "USD"
+    },
+    {
+      "line_id": "L-OVR-001b",
+      "description": "CUSTOMS INSPECTION",
+      "amount": 0.0,
+      "currency": "USD"
+    },
+    {
+      "line_id": "L-OVR-001c",
+      "description": "INSPECTION FEE",
+      "amount": 100.0,
+      "currency": "USD"
+    }
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "user_intent": "TC-OVR-001: CUSTOMS INSPECTION FEE classified as TYPE-B Inspection (OVERRIDE priority beats generic Customs)"
+  }
+}

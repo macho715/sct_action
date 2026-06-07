@@ -103,6 +103,34 @@ curl -sS -X POST "$BASE_URL/dry-run/type-b-classify" \
   --data @tests/type-b-classify.payload.json | jq .
 
 echo
+echo "10a) Golden TC-OVR-001: CUSTOMS INSPECTION FEE → TYPE-B Inspection (OVERRIDE)"
+response=$(curl -sS -X POST "$BASE_URL/dry-run/type-b-classify" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/classify-inspection-fee.payload.json)
+echo "$response" | jq .
+actual_type_b=$(echo "$response" | jq -r '.classifications[0].type_b // empty')
+actual_sct=$(echo "$response" | jq -r '.classifications[0].sct_code // empty')
+actual_rule=$(echo "$response" | jq -r '.classifications[0].type_b_rule_source // empty')
+assert_golden_tc "TC-OVR-001 type_b" "Inspection" "$actual_type_b"
+assert_golden_tc "TC-OVR-001 sct_code" "SCT.CHARGE.CUSTOMS_INSPECTION" "$actual_sct"
+assert_golden_tc "TC-OVR-001 rule_source" "OVERRIDE" "$actual_rule"
+
+echo
+echo "10b) Golden TC-OVR-002: BILL OF ENTRY FEE → TYPE-B Customs + SCT.CHARGE.BOE_FEE"
+response=$(curl -sS -X POST "$BASE_URL/dry-run/type-b-classify" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/classify-boe-fee.payload.json)
+echo "$response" | jq .
+actual_type_b=$(echo "$response" | jq -r '.classifications[0].type_b // empty')
+actual_sct=$(echo "$response" | jq -r '.classifications[0].sct_code // empty')
+actual_rule=$(echo "$response" | jq -r '.classifications[0].type_b_rule_source // empty')
+assert_golden_tc "TC-OVR-002 type_b" "Customs" "$actual_type_b"
+assert_golden_tc "TC-OVR-002 sct_code" "SCT.CHARGE.BOE_FEE" "$actual_sct"
+assert_golden_tc "TC-OVR-002 rule_source" "FALLBACK_KEYWORD" "$actual_rule"
+
+echo
 echo "11) dryRunRateLookup"
 curl -sS -X POST "$BASE_URL/dry-run/rate-lookup" \
   -H "Content-Type: application/json" \
@@ -145,4 +173,4 @@ curl -sS -X POST "$BASE_URL/ontology/audit-trace" \
   -d '{"request_id":"REQ-TEST","verdict":"AMBER","module":"invoice-audit"}' | jq .
 
 echo
-echo "Phase 1 smoke tests complete. (5 Golden TC assertions + 10 routes)"
+echo "Phase 1 + 2 smoke tests complete. (7 Golden TC assertions + 10 routes)"

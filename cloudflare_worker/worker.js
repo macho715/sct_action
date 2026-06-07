@@ -35,6 +35,7 @@
 // - Backward compatible: existing charge classifier logic preserved.
 
 import { resolveDocumentType, resolveRateBasis, explainOntologyNode } from "./lib/ontology.js";
+import { classifyTypeB } from "./lib/type-b-classifier.js";
 
 const DEFAULT_ONTOLOGY_VERSION = "SCT-LOGI-2026.06-v2.1";
 const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.0.0";
@@ -283,7 +284,10 @@ function handleTypeBClassify(body) {
         line_id: String(line.line_id || makeId("LINE")),
         type_b: resolved.type_b || TYPE_B.OTHERS,
         sct_code: resolved.sct_code,
+        sct_class: resolved.class || "Unknown",
         confidence: resolved.confidence,
+        type_b_rule_source: resolved.type_b_rule_source || "FALLBACK_DEFAULT",
+        reviewer_action: resolved.required_next_action || "Manual review required.",
       };
     }),
   };
@@ -339,50 +343,31 @@ function resolveTerm(term, context) {
     return mapping(input, rateMatch.code, rateMatch.label, rateMatch.sct_class, null, rateMatch.confidence, "AMBER", `Verify rate basis ${rateMatch.code} with supporting evidence.`, "MISSING");
   }
 
-  if (normalized.includes("CUSTOMS") || normalized.includes("CLEARANCE")) {
-    return mapping(input, "SCT.CHARGE.CUSTOMS_CLEARANCE", "Customs Clearance Fee", "Charge", TYPE_B.CUSTOMS, 0.98, "AMBER", "Check BOE and customs clearance approval evidence.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("MASTER DO") || normalized.includes("D/O") || normalized.includes("DELIVERY ORDER") || normalized === "DO" || normalized.endsWith(" DO FEE")) {
-    return mapping(input, "SCT.CHARGE.MASTER_DO", "Master Delivery Order Fee", "Charge", TYPE_B.DO, 0.94, "AMBER", "Check DO document and invoice approval evidence.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("THC") || normalized.includes("TERMINAL HANDLING")) {
-    return mapping(input, "SCT.CHARGE.THC", "Terminal Handling Charge", "Charge", TYPE_B.THC, 0.95, "AMBER", "Check terminal invoice or port tariff evidence.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("INLAND") || normalized.includes("TRUCK") || normalized.includes("TRANSPORT") || normalized.includes("DELIVERY")) {
-    return mapping(input, "SCT.CHARGE.INLAND_TRANSPORT", "Inland Transport Charge", "Charge", TYPE_B.INLAND, 0.90, "AMBER", "Check lane map, POD, trip evidence, and approved rate basis.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("INSPECTION") || normalized.includes("ADMIN")) {
-    return mapping(input, "SCT.CHARGE.INSPECTION_ADMIN", "Inspection/Admin Charge", "Charge", TYPE_B.INSPECTION, 0.88, "AMBER", "Check inspection report/admin charge evidence.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("DETENTION") || normalized.includes("DEMURRAGE") || normalized.includes("DEM/DET") || normalized.includes("DET")) {
-    return mapping(input, "SCT.CHARGE.DETENTION", "Detention/Demurrage Charge", "Charge", TYPE_B.DETENTION, 0.90, "HIGH", "Check free time, container event dates, carrier invoice, and approval.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("STORAGE") || normalized.includes("STROAGE") || normalized.includes("WAREHOUSE")) {
-    return mapping(input, "SCT.CHARGE.STORAGE", "Storage Charge", "Charge", TYPE_B.STROAGE, 0.90, "AMBER", "Check storage period, warehouse evidence, and approved rate basis.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("BOE") || normalized.includes("BILL OF ENTRY")) {
-    return mapping(input, "SCT.DOC.BOE", "Bill of Entry", "Document", TYPE_B.CUSTOMS, 0.95, "AMBER", "Match BOE number, issue date, consignee, HS code, and amount if applicable.", "NOT_CHECKED");
-  }
-
-  if (normalized === "BL" || normalized.includes("HBL") || normalized.includes("MBL") || normalized.includes("BILL OF LADING")) {
-    return mapping(input, "SCT.DOC.BL", "Bill of Lading", "Document", TYPE_B.OTHERS, 0.95, "AMBER", "Match BL with CI/PL, BOE, and shipment reference.", "NOT_CHECKED");
-  }
-
-  if (normalized.includes("POD") || normalized.includes("PROOF OF DELIVERY")) {
-    return mapping(input, "SCT.DOC.POD", "Proof of Delivery", "Document", TYPE_B.INLAND, 0.94, "AMBER", "Match POD with lane, vehicle type, trip count, and delivery date.", "NOT_CHECKED");
+  // Phase 2 (v2.1.0): Type-B classifier with override priority
+  //   1. OVERRIDE — Customs Inspection beats generic Customs (FR-008, FR-009, SC-006)
+  //   2. FALLBACK_KEYWORD — BOE_FEE, CUSTOMS_CLEARANCE, DO, THC, INLAND, etc.
+  const typeBResult = classifyTypeB(input);
+  if (typeBResult) {
+    // Map type_b string to TYPE_B enum value
+    const typeBEnum = Object.values(TYPE_B).find((v) => v === typeBResult.type_b) || TYPE_B.OTHERS;
+    return mapping(
+      input,
+      typeBResult.sct_code,
+      typeBResult.canonical_label,
+      typeBResult.sct_class,
+      typeBEnum,
+      typeBResult.confidence,
+      "AMBER",
+      typeBResult.reviewer_action,
+      "NOT_CHECKED",
+      typeBResult.rule_source
+    );
   }
 
   return mapping(input, "SCT.UNKNOWN", "Unresolved Term", "Unknown", TYPE_B.OTHERS, 0.30, "AMBER", "Manual review required. Provide shipment reference, charge description, or document reference.", "MISSING");
 }
 
-function mapping(inputTerm, sctCode, canonicalLabel, cls, typeB, confidence, risk, nextAction, evidenceStatus) {
+function mapping(inputTerm, sctCode, canonicalLabel, cls, typeB, confidence, risk, nextAction, evidenceStatus, ruleSource) {
   return {
     input_term: maskText(inputTerm),
     sct_code: sctCode,
@@ -393,6 +378,7 @@ function mapping(inputTerm, sctCode, canonicalLabel, cls, typeB, confidence, ris
     risk,
     required_next_action: nextAction,
     evidence_status: evidenceStatus,
+    type_b_rule_source: ruleSource || null,
     audit_trace_id: makeId("TRACE"),
   };
 }

@@ -1,0 +1,26 @@
+{
+  "lines": [
+    {
+      "line_id": "L-OVR-002",
+      "description": "BILL OF ENTRY FEE",
+      "amount": 75.0,
+      "currency": "USD"
+    },
+    {
+      "line_id": "L-OVR-002b",
+      "description": "BILL OF ENTRY",
+      "amount": 0.0,
+      "currency": "USD"
+    },
+    {
+      "line_id": "L-OVR-002c",
+      "description": "BOE FEE",
+      "amount": 50.0,
+      "currency": "USD"
+    }
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "user_intent": "TC-OVR-002: BILL OF ENTRY FEE classified as TYPE-B Customs with SCT.CHARGE.BOE_FEE (links to BOE evidence)"
+  }
+}
