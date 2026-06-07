@@ -1,0 +1,10 @@
+{
+  "sct_codes": ["SCT.RATE.AT_COST"],
+  "provided_evidence": [
+    ["SCT.DOC.VENDOR_INVOICE", "SCT.DOC.APPROVAL", "AMOUNT_MATCH"]
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "user_intent": "TC-EVM-003: AT_COST rate basis with full evidence (vendor invoice + approval + amount match) → MATCHED_EXACT"
+  }
+}

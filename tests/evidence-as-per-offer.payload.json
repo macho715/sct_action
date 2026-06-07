@@ -1,0 +1,10 @@
+{
+  "sct_codes": ["SCT.RATE.AS_PER_OFFER"],
+  "provided_evidence": [
+    ["SCT.DOC.APPROVAL_OFFER"]
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "user_intent": "TC-EVM-004: AS_PER_OFFER rate basis with missing client approval + amount match → PARTIAL"
+  }
+}

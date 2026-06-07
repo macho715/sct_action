@@ -1,0 +1,10 @@
+{
+  "sct_codes": ["SCT.CHARGE.CUSTOMS_INSPECTION"],
+  "provided_evidence": [
+    ["SCT.DOC.APPROVAL"]
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "user_intent": "TC-EVM-002: Customs Inspection (CUSTOMS_INSPECTION) with partial evidence → PARTIAL"
+  }
+}

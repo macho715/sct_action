@@ -89,6 +89,46 @@ curl -sS -X POST "$BASE_URL/ontology/evidence-map" \
   --data @tests/evidence-map.payload.json | jq .
 
 echo
+echo "8a) Golden TC-EVM-001: CUSTOMS_CLEARANCE + full evidence → MATCHED_EXACT"
+response=$(curl -sS -X POST "$BASE_URL/ontology/evidence-map" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/evidence-customs.payload.json)
+echo "$response" | jq .
+actual=$(echo "$response" | jq -r '.evidence_validation[0].evidence_status // empty')
+assert_golden_tc "TC-EVM-001" "MATCHED_EXACT" "$actual"
+
+echo
+echo "8b) Golden TC-EVM-002: CUSTOMS_INSPECTION + partial evidence → PARTIAL"
+response=$(curl -sS -X POST "$BASE_URL/ontology/evidence-map" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/evidence-inspection.payload.json)
+echo "$response" | jq .
+actual=$(echo "$response" | jq -r '.evidence_validation[0].evidence_status // empty')
+assert_golden_tc "TC-EVM-002" "PARTIAL" "$actual"
+
+echo
+echo "8c) Golden TC-EVM-003: AT_COST + full evidence → MATCHED_EXACT"
+response=$(curl -sS -X POST "$BASE_URL/ontology/evidence-map" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/evidence-at-cost.payload.json)
+echo "$response" | jq .
+actual=$(echo "$response" | jq -r '.evidence_validation[0].evidence_status // empty')
+assert_golden_tc "TC-EVM-003" "MATCHED_EXACT" "$actual"
+
+echo
+echo "8d) Golden TC-EVM-004: AS_PER_OFFER + missing client approval → PARTIAL"
+response=$(curl -sS -X POST "$BASE_URL/ontology/evidence-map" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/evidence-as-per-offer.payload.json)
+echo "$response" | jq .
+actual=$(echo "$response" | jq -r '.evidence_validation[0].evidence_status // empty')
+assert_golden_tc "TC-EVM-004" "PARTIAL" "$actual"
+
+echo
 echo "9) checkSctOntologyGate"
 curl -sS -X POST "$BASE_URL/ontology/gate-check" \
   -H "Content-Type: application/json" \
@@ -173,4 +213,4 @@ curl -sS -X POST "$BASE_URL/ontology/audit-trace" \
   -d '{"request_id":"REQ-TEST","verdict":"AMBER","module":"invoice-audit"}' | jq .
 
 echo
-echo "Phase 1 + 2 smoke tests complete. (7 Golden TC assertions + 10 routes)"
+echo "Phase 1 + 2 + 3 smoke tests complete. (11 Golden TC assertions + 10 routes)"

@@ -33,12 +33,23 @@
 // - New ontology classes: DocumentType (BOE, CI/PL, POD, DO, STORAGE_INVOICE, etc.)
 //   and RateBasis (AT_COST, AS_PER_OFFER, TARIFF, MISSING, CONFLICT)
 // - Backward compatible: existing charge classifier logic preserved.
+//
+// v2.1.0 (Phase 2):
+// - Customs Inspection override priority: OVERRIDE > FALLBACK_KEYWORD
+// - Bill of Entry Fee modeled as SCT.CHARGE.BOE_FEE (separate from CUSTOMS_CLEARANCE)
+//
+// v2.2.0 (Phase 3):
+// - Evidence Map extracted to lib/evidence.js
+// - Extended rules: Customs/Inspection/AT_COST/AS_PER_OFFER/DO/THC/INLAND/DETENTION/STORAGE/BL
+// - New fields: required_evidence_codes, rule_source, reviewer_action
+// - validateEvidence(pack) helper for MATCHED_EXACT / PARTIAL / MISSING
 
 import { resolveDocumentType, resolveRateBasis, explainOntologyNode } from "./lib/ontology.js";
 import { classifyTypeB } from "./lib/type-b-classifier.js";
+import { getEvidenceRequirements, validateEvidence } from "./lib/evidence.js";
 
 const DEFAULT_ONTOLOGY_VERSION = "SCT-LOGI-2026.06-v2.1";
-const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.0.0";
+const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.2.0";
 
 const TYPE_B = Object.freeze({
   CUSTOMS: "Customs",
@@ -194,9 +205,23 @@ function handleEvidenceMap(body) {
     };
   }
 
+  // Phase 3 (v2.2.0): optional per-code validation when `provided_evidence` is supplied
+  // alongside `sct_codes` (paired by index). Returns MATCHED_EXACT / PARTIAL / MISSING.
+  const provided = Array.isArray(body.provided_evidence) ? body.provided_evidence : [];
+  let evidence_validation = null;
+  if (provided.length > 0) {
+    evidence_validation = codes.map((code, idx) =>
+      validateEvidence({
+        sct_code: String(code),
+        provided_evidence: Array.isArray(provided[idx]) ? provided[idx] : [],
+      }),
+    );
+  }
+
   return {
     dry_run: true,
-    evidence_requirements: codes.map((code) => evidenceRequirementFor(String(code))),
+    evidence_requirements: codes.map((code) => getEvidenceRequirements(String(code))),
+    ...(evidence_validation ? { evidence_validation } : {}),
   };
 }
 
@@ -471,53 +496,6 @@ function relationEdgesFor(sctCode) {
     ];
   }
   return [];
-}
-
-function evidenceRequirementFor(sctCode) {
-  const code = String(sctCode).toUpperCase();
-
-  if (code.includes("CUSTOMS") || code.includes("BOE")) {
-    return {
-      sct_code: sctCode,
-      required_evidence: ["BOE", "Customs clearance approval", "Invoice line reference"],
-      missing_status: "AMBER",
-      max_required_inputs: 3,
-    };
-  }
-
-  if (code.includes("MASTER_DO") || code.endsWith(".DO")) {
-    return {
-      sct_code: sctCode,
-      required_evidence: ["Delivery Order", "DO fee support", "Invoice line reference"],
-      missing_status: "AMBER",
-      max_required_inputs: 3,
-    };
-  }
-
-  if (code.includes("INLAND") || code.includes("POD")) {
-    return {
-      sct_code: sctCode,
-      required_evidence: ["Approved lane map", "POD / signed delivery note", "Vehicle/trip evidence"],
-      missing_status: "AMBER",
-      max_required_inputs: 3,
-    };
-  }
-
-  if (code.includes("DETENTION") || code.includes("DEM")) {
-    return {
-      sct_code: sctCode,
-      required_evidence: ["Free time basis", "Container event timeline", "Carrier/terminal invoice"],
-      missing_status: "ZERO",
-      max_required_inputs: 3,
-    };
-  }
-
-  return {
-    sct_code: sctCode,
-    required_evidence: ["Invoice line reference", "Supporting document", "Approval evidence"],
-    missing_status: "AMBER",
-    max_required_inputs: 3,
-  };
 }
 
 function evaluateGate({ moduleName, sctCodes, evidenceStatus, rateBasisStatus, finalSubtotalStatus }) {
