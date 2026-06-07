@@ -1,0 +1,83 @@
+{
+  "package": "HVDC_SCT_ONTOLOGY_GPT_ACTIONS_FULL_v1_0",
+  "created_utc": "2026-06-07T19:06:53.288547Z",
+  "checks": {
+    "openapi_noauth_yaml_parse": "PASS",
+    "openapi_apikey_yaml_parse": "PASS",
+    "node_syntax_check": "PASS",
+    "node_check_detail": {
+      "available": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "file_count": 13
+  },
+  "files": [
+    {
+      "path": "README_INSTALL.md",
+      "size": 2267,
+      "sha256": "917ba2b6c1f61b9d9f900cdf2b4b399f1179ca0eb8b691dfb746ff10636d0aa9"
+    },
+    {
+      "path": "cloudflare_worker/worker.js",
+      "size": 25939,
+      "sha256": "989c1d8df5d34c1acecbb01ff2fb8c9a7499980f812ccd8a4442b6c58685fab9"
+    },
+    {
+      "path": "docs/ROUTE_DECISION.md",
+      "size": 536,
+      "sha256": "18c28f653c82fdc9f8576ce316de6cda713f9e2fe9000a4dc76ab9df04862c77"
+    },
+    {
+      "path": "gpts/GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md",
+      "size": 1787,
+      "sha256": "cf9d2817d5f4ac9c84c4f404cc702ae13ae2122f4e203163471f444a223dfbb9"
+    },
+    {
+      "path": "openapi/hvdc_sct_ontology_actions.apikey.yaml",
+      "size": 26404,
+      "sha256": "5e65cbf29f647d2ee1afbdc06fec5be38d4c6f11b43e9b7a16d1f120be189127"
+    },
+    {
+      "path": "openapi/hvdc_sct_ontology_actions.noauth.yaml",
+      "size": 25960,
+      "sha256": "158c6b9595e7c33ae4e9dff455cfdc4755fd205de069959b23cf3dbdde3dfefb"
+    },
+    {
+      "path": "tests/curl_smoke_tests.sh",
+      "size": 1063,
+      "sha256": "bde87f70aea65c7021133657d7b98663d5c47134cbff8c4f8c5e07d72ed41229"
+    },
+    {
+      "path": "tests/evidence-map.payload.json",
+      "size": 218,
+      "sha256": "6f27295d3112e4c86592f8cd5b4a3829457378d284696d9a7c28e01442491613"
+    },
+    {
+      "path": "tests/gate-check.payload.json",
+      "size": 473,
+      "sha256": "0b0ab333fe2b3dd066c769c2f4a7d56ab42370b978e0ff64599d0a1e5f5074e8"
+    },
+    {
+      "path": "tests/rate-lookup.payload.json",
+      "size": 212,
+      "sha256": "21d2d8835618ec5acd951120819b38fbf8214c28a602b5b59486c4501f5cf305"
+    },
+    {
+      "path": "tests/resolve.payload.json",
+      "size": 373,
+      "sha256": "449a4c414c042e74f111b9276805893c7ca06ed0d593ec75f3e393ef4efb870c"
+    },
+    {
+      "path": "tests/type-b-classify.payload.json",
+      "size": 397,
+      "sha256": "034bf437f91ddfea78d012282bd6991c6788e8f56be69eff8e12c8810629976c"
+    },
+    {
+      "path": "wrangler.toml",
+      "size": 337,
+      "sha256": "2c7decde451ebaed5bde0986e5c58c058d3328e78387b20706a4995f0e710c51"
+    }
+  ]
+}

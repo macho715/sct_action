@@ -1,0 +1,10 @@
+name = "hvdc-ontology-chatgpt-app"
+main = "cloudflare_worker/worker.js"
+compatibility_date = "2026-06-07"
+
+# Optional production authentication:
+# Run:
+#   wrangler secret put SCT_ACTION_API_KEY
+# Then configure GPT Builder Action authentication as API Key header X-API-Key.
+#
+# For no-auth smoke testing, do not set SCT_ACTION_API_KEY.

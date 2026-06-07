@@ -1,0 +1,21 @@
+{
+  "module": "invoice-audit",
+  "sct_codes": [
+    "SCT.CHARGE.CUSTOMS_CLEARANCE"
+  ],
+  "evidence_status": [
+    {
+      "sct_code": "SCT.CHARGE.CUSTOMS_CLEARANCE",
+      "status": "PARTIAL",
+      "document_ref_masked": "BOE-MASKED",
+      "note": "smoke test"
+    }
+  ],
+  "rate_basis_status": "NOT_CHECKED",
+  "final_subtotal_status": "MISSING",
+  "context": {
+    "module": "invoice-audit",
+    "shipment_no_masked": "HVDC-ADOPT-SCT-0180",
+    "currency": "USD"
+  }
+}

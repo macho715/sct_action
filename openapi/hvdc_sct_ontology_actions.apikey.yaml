@@ -1,0 +1,992 @@
+openapi: 3.1.0
+info:
+  title: HVDC SCT Ontology + DSV Invoice Audit Dry-Run Actions
+  version: 2.2.0
+  description: Private internal dry-run/read-only API schema for GPT Actions. No invoice
+    approval, payment, ERP/TMS/WMS mutation, or raw contract-rate disclosure is allowed.
+servers:
+- url: https://hvdc-ontology-chatgpt-app.mscho715.workers.dev
+  description: HVDC SCT Ontology Worker root endpoint.
+paths:
+  /ontology/resolve:
+    post:
+      operationId: resolveSctOntologyTerm
+      summary: Resolve logistics text into SCT ontology codes
+      description: Resolve shipment references, charge descriptions, invoice references,
+        document terms, lane references, and logistics entities into SCT ontology
+        mappings. Dry-run/read-only only.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - terms
+              - context
+              properties:
+                ontology_version:
+                  type: string
+                  example: SCT-LOGI-2026.06-v2.1
+                terms:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: string
+                  example:
+                  - HVDC-ADOPT-SCT-0180
+                  - CUSTOMS CLEARANCE FEE
+                  - BAMF0020462
+                context:
+                  $ref: '#/components/schemas/SctContext'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResolveResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /ontology/explain:
+    post:
+      operationId: explainSctOntologyNode
+      summary: Explain an SCT ontology node and key relations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - sct_code
+              properties:
+                sct_code:
+                  type: string
+                  example: SCT.CHARGE.CUSTOMS_CLEARANCE
+                include_relations:
+                  type: boolean
+                  default: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExplainResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /ontology/evidence-map:
+    post:
+      operationId: mapRequiredEvidence
+      summary: Map SCT charge/risk code to required evidence documents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - sct_codes
+              - context
+              properties:
+                sct_codes:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: string
+                  example:
+                  - SCT.CHARGE.CUSTOMS_CLEARANCE
+                  - SCT.DOC.BOE
+                context:
+                  $ref: '#/components/schemas/SctContext'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvidenceMapResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /ontology/gate-check:
+    post:
+      operationId: checkSctOntologyGate
+      summary: Evaluate SCT ontology risk gates in dry-run mode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - module
+              - sct_codes
+              - evidence_status
+              properties:
+                module:
+                  type: string
+                  enum:
+                  - invoice-audit
+                  - cost-guard
+                  - hs-risk
+                  - demdet
+                  - stowage
+                  - kpi
+                  - data-spine
+                  example: invoice-audit
+                sct_codes:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: string
+                evidence_status:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/EvidenceStatusLine'
+                rate_basis_status:
+                  type: string
+                  enum:
+                  - MATCH
+                  - PARTIAL
+                  - MISSING
+                  - CONFLICT
+                  - NOT_CHECKED
+                  default: NOT_CHECKED
+                final_subtotal_status:
+                  type: string
+                  enum:
+                  - MATCH
+                  - MISSING
+                  - CONFLICT
+                  - NOT_APPLICABLE
+                  default: NOT_APPLICABLE
+                context:
+                  $ref: '#/components/schemas/SctContext'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SctGateResult'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /ontology/crosswalk:
+    post:
+      operationId: crosswalkSctToTypeB
+      summary: Crosswalk SCT code to TYPE-B/evidence/cost-center/rate-basis hints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - sct_codes
+              properties:
+                sct_codes:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: string
+                target:
+                  type: string
+                  enum:
+                  - TYPE_B
+                  - COST_CENTER_HINT
+                  - DOCUMENT_TYPE
+                  - RATE_BASIS
+                  default: TYPE_B
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CrosswalkResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /ontology/audit-trace:
+    post:
+      operationId: createOntologyAuditTrace
+      summary: Create masked audit trace for SCT mapping decisions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - request_id
+              - module
+              - mappings
+              - verdict
+              properties:
+                request_id:
+                  type: string
+                module:
+                  type: string
+                mappings:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/SctMapping'
+                verdict:
+                  type: string
+                  enum:
+                  - PASS
+                  - PASS WITH WARNINGS
+                  - AMBER
+                  - FAIL
+                  - ZERO
+                masked_reference:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuditTraceResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /dry-run/validate:
+    post:
+      operationId: dryRunValidateInvoicePack
+      summary: Validate invoice audit payload without committing changes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceAuditPayload'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SctGateResult'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /dry-run/type-b-classify:
+    post:
+      operationId: dryRunClassifyTypeB
+      summary: Classify charge descriptions into TYPE-B buckets using SCT ontology
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - lines
+              properties:
+                lines:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required:
+                    - line_id
+                    - description
+                    properties:
+                      line_id:
+                        type: string
+                        example: L001
+                      description:
+                        type: string
+                        example: CUSTOMS CLEARANCE FEE
+                      amount:
+                        type: number
+                        example: 150.0
+                      currency:
+                        type: string
+                        enum:
+                        - USD
+                        - AED
+                        example: USD
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TypeBClassifyResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+  /dry-run/rate-lookup:
+    post:
+      operationId: dryRunRateLookup
+      summary: Lookup private contract rate status by masked keys; never disclose
+        raw contract rate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - charge
+              - unit
+              properties:
+                charge:
+                  type: string
+                  example: CUSTOMS CLEARANCE FEE
+                route_key_masked:
+                  type: string
+                  example: KP_TO_DSV_MASKED
+                unit:
+                  type: string
+                  example: SHIPMENT
+                type_b:
+                  type: string
+                  example: Customs
+                sct_code:
+                  type: string
+                  example: SCT.CHARGE.CUSTOMS_CLEARANCE
+                amount:
+                  type: number
+                  example: 150.0
+                currency:
+                  type: string
+                  enum:
+                  - USD
+                  - AED
+                  example: USD
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RateLookupResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Route not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+components:
+  schemas:
+    SctContext:
+      type: object
+      properties:
+        module:
+          type: string
+          enum:
+          - invoice-audit
+          - cost-guard
+          - hs-risk
+          - demdet
+          - stowage
+          - kpi
+          - data-spine
+          example: invoice-audit
+        shipment_no_masked:
+          type: string
+          example: HVDC-ADOPT-SCT-0180
+        draft_invoice_ref_masked:
+          type: string
+          example: BAMF0020462
+        lane_masked:
+          type: string
+          example: KP_TO_DSV_MASKED
+        document_type:
+          type: string
+          example: BOE
+        currency:
+          type: string
+          enum:
+          - AED
+          - USD
+          example: USD
+        incoterm:
+          type: string
+          example: DAP
+        cargo_type:
+          type: string
+          example: GENERAL
+        user_intent:
+          type: string
+          example: resolve shipment key and evidence status
+    SctMapping:
+      type: object
+      required:
+      - input_term
+      - sct_code
+      - canonical_label
+      - class
+      - confidence
+      - risk
+      properties:
+        input_term:
+          type: string
+        sct_code:
+          type: string
+        canonical_label:
+          type: string
+        class:
+          type: string
+        type_b:
+          type: string
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+        risk:
+          type: string
+          enum:
+          - LOW
+          - AMBER
+          - HIGH
+          - ZERO
+        required_next_action:
+          type: string
+        evidence_status:
+          type: string
+        audit_trace_id:
+          type: string
+    SctNode:
+      type: object
+      properties:
+        sct_code:
+          type: string
+        class:
+          type: string
+        canonical_label:
+          type: string
+        synonyms:
+          type: array
+          items:
+            type: string
+        type_b:
+          type: string
+        risk_default:
+          type: string
+          enum:
+          - LOW
+          - AMBER
+          - HIGH
+          - ZERO
+    SctRelation:
+      type: object
+      properties:
+        from:
+          type: string
+        relation:
+          type: string
+        to:
+          type: string
+    EvidenceRequirement:
+      type: object
+      properties:
+        sct_code:
+          type: string
+        required_evidence:
+          type: array
+          items:
+            type: string
+        missing_status:
+          type: string
+          enum:
+          - AMBER
+          - ZERO
+        max_required_inputs:
+          type: integer
+          const: 3
+    EvidenceStatusLine:
+      type: object
+      required:
+      - sct_code
+      - status
+      properties:
+        sct_code:
+          type: string
+        status:
+          type: string
+          enum:
+          - MATCHED_EXACT
+          - MATCHED_AMOUNT
+          - MATCHED_APPROVAL
+          - PARTIAL
+          - MISSING
+          - CONFLICT
+          - NOT_APPLICABLE
+        document_ref_masked:
+          type: string
+        note:
+          type: string
+    SctGateResult:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        ontology_version:
+          type: string
+        verdict:
+          type: string
+          enum:
+          - PASS
+          - PASS WITH WARNINGS
+          - AMBER
+          - FAIL
+          - ZERO
+        gates:
+          type: array
+          items:
+            type: object
+            properties:
+              gate:
+                type: string
+              status:
+                type: string
+              note:
+                type: string
+        required_inputs_max_3:
+          type: array
+          maxItems: 3
+          items:
+            type: string
+        audit_trace_id:
+          type: string
+        _meta:
+          type: object
+    CrosswalkLine:
+      type: object
+      properties:
+        sct_code:
+          type: string
+        target:
+          type: string
+        value:
+          type: string
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+    TypeBClassificationLine:
+      type: object
+      properties:
+        line_id:
+          type: string
+        type_b:
+          type: string
+          enum:
+          - Customs
+          - DO
+          - INLAND
+          - THC
+          - Inspection
+          - Detention
+          - STROAGE
+          - OTHERS
+        sct_code:
+          type: string
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+    InvoiceAuditPayload:
+      type: object
+      required:
+      - package_version
+      - lines
+      properties:
+        package_version:
+          type: string
+          example: DSV-GPTS-v2.2.0
+        ontology_version:
+          type: string
+          example: SCT-LOGI-2026.06-v2.1
+        final_subtotal_before_vat:
+          type: number
+          example: 15339.86
+        currency:
+          type: string
+          enum:
+          - USD
+          - AED
+          example: USD
+        rate_basis_status:
+          type: string
+          enum:
+          - MATCH
+          - PARTIAL
+          - MISSING
+          - CONFLICT
+          - NOT_CHECKED
+          default: NOT_CHECKED
+        lines:
+          type: array
+          items:
+            type: object
+            required:
+            - source_row_id
+            - type_b
+            - total_amount
+            properties:
+              source_row_id:
+                type: string
+              shipment_no_masked:
+                type: string
+              dsv_draft_invoice_ref_masked:
+                type: string
+              type_b:
+                type: string
+              sct_code:
+                type: string
+              total_amount:
+                type: number
+              currency:
+                type: string
+                enum:
+                - USD
+                - AED
+              evidence_status:
+                type: string
+    ErrorResponse:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        error:
+          type: string
+        message:
+          type: string
+        required_inputs_max_3:
+          type: array
+          maxItems: 3
+          items:
+            type: string
+        _meta:
+          type: object
+    ResolveResponse:
+      type: object
+      required:
+      - dry_run
+      - ontology_version
+      - mappings
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        ontology_version:
+          type: string
+        mappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/SctMapping'
+        _meta:
+          type: object
+    ExplainResponse:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        node:
+          $ref: '#/components/schemas/SctNode'
+        relations:
+          type: array
+          items:
+            $ref: '#/components/schemas/SctRelation'
+        _meta:
+          type: object
+    EvidenceMapResponse:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        evidence_requirements:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceRequirement'
+        _meta:
+          type: object
+    CrosswalkResponse:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        crosswalk:
+          type: array
+          items:
+            $ref: '#/components/schemas/CrosswalkLine'
+        _meta:
+          type: object
+    AuditTraceResponse:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        audit_trace_id:
+          type: string
+        retained_payload:
+          type: string
+          enum:
+          - MASKED_ONLY
+        request_id:
+          type: string
+        module:
+          type: string
+        verdict:
+          type: string
+        _meta:
+          type: object
+    TypeBClassifyResponse:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        classifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/TypeBClassificationLine'
+        _meta:
+          type: object
+    RateLookupResponse:
+      type: object
+      properties:
+        dry_run:
+          type: boolean
+          const: true
+        status:
+          type: string
+          enum:
+          - MATCH
+          - PARTIAL
+          - MISSING
+          - CONFLICT
+        contract_row_id_masked:
+          type: string
+        private_rate_masked:
+          type: boolean
+          const: true
+        reviewer_action:
+          type: string
+        _meta:
+          type: object
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key

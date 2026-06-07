@@ -1,0 +1,9 @@
+{
+  "charge": "CUSTOMS CLEARANCE FEE",
+  "route_key_masked": "KP_TO_DSV_MASKED",
+  "unit": "SHIPMENT",
+  "type_b": "Customs",
+  "sct_code": "SCT.CHARGE.CUSTOMS_CLEARANCE",
+  "amount": 150.0,
+  "currency": "USD"
+}

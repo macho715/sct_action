@@ -1,0 +1,15 @@
+{
+  "ontology_version": "SCT-LOGI-2026.06-v2.1",
+  "terms": [
+    "HVDC-ADOPT-SCT-0180",
+    "CUSTOMS CLEARANCE FEE",
+    "BAMF0020462"
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "shipment_no_masked": "HVDC-ADOPT-SCT-0180",
+    "draft_invoice_ref_masked": "BAMF0020462",
+    "currency": "USD",
+    "user_intent": "resolve shipment key and evidence status"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "lines": [
+    {
+      "line_id": "L001",
+      "description": "CUSTOMS CLEARANCE FEE",
+      "amount": 150.0,
+      "currency": "USD"
+    },
+    {
+      "line_id": "L002",
+      "description": "MASTER DO FEE",
+      "amount": 80.0,
+      "currency": "USD"
+    },
+    {
+      "line_id": "L003",
+      "description": "TRUCKING CHARGE",
+      "amount": 200.0,
+      "currency": "USD"
+    }
+  ]
+}

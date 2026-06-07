@@ -1,0 +1,11 @@
+{
+  "sct_codes": [
+    "SCT.CHARGE.CUSTOMS_CLEARANCE",
+    "SCT.ENTITY.SHIPMENT_REFERENCE"
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "shipment_no_masked": "HVDC-ADOPT-SCT-0180",
+    "currency": "USD"
+  }
+}
