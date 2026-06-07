@@ -1,0 +1,11 @@
+{
+  "ontology_version": "SCT-LOGI-2026.06-v2.1",
+  "terms": [
+    "AS PER OFFER",
+    "per offer"
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "user_intent": "TC-RATE-002: AS PER OFFER resolves as RateBasis"
+  }
+}

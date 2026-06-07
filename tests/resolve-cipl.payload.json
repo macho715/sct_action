@@ -1,0 +1,12 @@
+{
+  "ontology_version": "SCT-LOGI-2026.06-v2.1",
+  "terms": [
+    "CI/PL",
+    "CIPL",
+    "Invoice and Packing List"
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "user_intent": "TC-DOC-002: CI/PL resolves as DocumentType"
+  }
+}

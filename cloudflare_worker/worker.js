@@ -13,8 +13,31 @@
 //   or Authorization: Bearer <value>.
 // - If env.SCT_ACTION_API_KEY is not set, the worker runs in no-auth smoke-test mode.
 
+// HVDC SCT Ontology GPT Actions REST Wrapper
+// Version: 2.0.0
+// Runtime: Cloudflare Workers, module syntax
+//
+// Purpose:
+// - Expose REST routes that GPT Actions can call through OpenAPI.
+// - Support both /ontology/* and /mcp/ontology/* aliases.
+// - Dry-run/read-only only.
+// - No invoice approval, payment, ERP/TMS/WMS mutation, or raw contract-rate disclosure.
+//
+// Optional authentication:
+// - If env.SCT_ACTION_API_KEY is set, requests must include X-API-Key: <value>
+//   or Authorization: Bearer <value>.
+// - If env.SCT_ACTION_API_KEY is not set, the worker runs in no-auth smoke-test mode.
+//
+// v2.0.0 (Phase 1):
+// - Module split: lib/ontology-data.js (constants) + lib/ontology.js (resolution)
+// - New ontology classes: DocumentType (BOE, CI/PL, POD, DO, STORAGE_INVOICE, etc.)
+//   and RateBasis (AT_COST, AS_PER_OFFER, TARIFF, MISSING, CONFLICT)
+// - Backward compatible: existing charge classifier logic preserved.
+
+import { resolveDocumentType, resolveRateBasis, explainOntologyNode } from "./lib/ontology.js";
+
 const DEFAULT_ONTOLOGY_VERSION = "SCT-LOGI-2026.06-v2.1";
-const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v1.0.0";
+const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.0.0";
 
 const TYPE_B = Object.freeze({
   CUSTOMS: "Customs",
@@ -304,6 +327,18 @@ function resolveTerm(term, context) {
     return mapping(input, "SCT.ENTITY.DSV_DRAFT_INVOICE_REF", "DSV Draft Invoice Reference", "InvoiceReference", TYPE_B.OTHERS, 0.92, "AMBER", "Cross-check draft invoice reference against evidence package.", "NOT_CHECKED");
   }
 
+  // Phase 1 (v2.0.0): DocumentType ontology match (FR-001 to FR-004)
+  const docMatch = resolveDocumentType(input);
+  if (docMatch) {
+    return mapping(input, docMatch.code, docMatch.label, docMatch.sct_class, null, docMatch.confidence, "AMBER", `Verify ${docMatch.code} document and required evidence.`, "PARTIAL");
+  }
+
+  // Phase 1 (v2.0.0): RateBasis ontology match (FR-005 to FR-007)
+  const rateMatch = resolveRateBasis(input);
+  if (rateMatch) {
+    return mapping(input, rateMatch.code, rateMatch.label, rateMatch.sct_class, null, rateMatch.confidence, "AMBER", `Verify rate basis ${rateMatch.code} with supporting evidence.`, "MISSING");
+  }
+
   if (normalized.includes("CUSTOMS") || normalized.includes("CLEARANCE")) {
     return mapping(input, "SCT.CHARGE.CUSTOMS_CLEARANCE", "Customs Clearance Fee", "Charge", TYPE_B.CUSTOMS, 0.98, "AMBER", "Check BOE and customs clearance approval evidence.", "NOT_CHECKED");
   }
@@ -363,6 +398,27 @@ function mapping(inputTerm, sctCode, canonicalLabel, cls, typeB, confidence, ris
 }
 
 function explainNode(sctCode) {
+  // Phase 1 (v2.0.0): delegate to lib/ontology.js for DOC_TYPE/RATE_BASIS/CHARGE_TYPE
+  const libNode = explainOntologyNode(sctCode);
+  if (libNode) {
+    // Map lib type_b to TYPE_B enum (CHARGE_TYPE entries have type_b set)
+    const typeBValue = libNode.type_b;
+    let resolvedTypeB = TYPE_B.OTHERS;
+    if (typeBValue) {
+      const match = Object.values(TYPE_B).find((v) => v === typeBValue);
+      if (match) resolvedTypeB = match;
+    }
+    return {
+      sct_code: libNode.sct_code,
+      class: libNode.class,
+      canonical_label: libNode.canonical_label,
+      synonyms: libNode.synonyms,
+      type_b: resolvedTypeB,
+      risk_default: libNode.risk_default,
+    };
+  }
+
+  // Backward-compat fallbacks for legacy charge codes not in CHARGE_TYPE
   const code = String(sctCode).toUpperCase();
 
   if (code.includes("CUSTOMS_CLEARANCE")) {
