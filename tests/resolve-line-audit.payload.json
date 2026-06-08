@@ -1,0 +1,15 @@
+{
+  "ontology_version": "SCT-LOGI-2026.06-v2.4",
+  "terms": [
+    "BILL OF ENTRY",
+    "AT COST",
+    "CUSTOMS INSPECTION FEE",
+    "BILL OF ENTRY FEE",
+    "HVDC-ADOPT-SCT-0180"
+  ],
+  "context": {
+    "module": "invoice-audit",
+    "shipment_no_masked": "HVDC-ADOPT-SCT-0180",
+    "currency": "USD"
+  }
+}
