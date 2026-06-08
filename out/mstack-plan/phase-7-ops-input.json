@@ -1,0 +1,14 @@
+{
+  "request": "Plan the remaining operational work after SCT Ontology SWARM Phase 1-7 completion: keep no-auth GPT Builder mode, verify live actions, and review the deployment report. Do not switch to API-key mode.",
+  "scope": "Post-release no-auth verification for HVDC SCT Ontology GPT Actions v2.3.0 to v2.4.0 SWARM outputs.",
+  "requires_approval": true,
+  "shared_modules": [
+    "cloudflare_worker/worker.js",
+    "openapi/hvdc_sct_ontology_actions.noauth.yaml",
+    "openapi/hvdc_sct_ontology_actions.apikey.yaml",
+    "gpts/GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md",
+    "docs/superpowers/reports/2026-06-08-sct-ontology-deployment.md"
+  ],
+  "must_include_mermaid": true,
+  "target_plan_path": "SCT_ONTOLOGY_PHASE_7_OPS_PLAN_2026-06-08.md"
+}

@@ -130,9 +130,34 @@ New sections:
 
 ## 10. Known Limitations / Next Steps
 
-- Auth: production `SCT_ACTION_API_KEY` not yet set (running in `NO_AUTH_DEV` mode). Set via `wrangler secret put SCT_ACTION_API_KEY` before production.
-- GPTS Builder schema: requires manual paste of `openapi/hvdc_sct_ontology_actions.noauth.yaml` (or apikey.yaml once secret is set) into ChatGPT Builder.
+- Auth: keep `NO_AUTH_DEV` mode for the current GPT Builder workflow. Do not run `wrangler secret put SCT_ACTION_API_KEY` for this operating mode.
+- GPTS Builder schema: keep `openapi/hvdc_sct_ontology_actions.noauth.yaml` in ChatGPT Builder. Do not switch to `apikey.yaml` for the current workflow.
 - Phase 7 spec items remain as documentation reference; no code change in this SWARM batch (Phase 7 nominal v2.6.0 reserved for future regression-only release).
+
+## 10A. No-Auth Operations Verification (2026-06-08)
+
+Decision: API-key mode is not enabled. The current operating mode remains no-auth / read-only / dry-run.
+
+Current-session verification:
+
+| Check | Result |
+|-------|--------|
+| Worker `/health` | PASS: `status=OK`, `package_version=HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.4.0`, `supported_route_count=9` |
+| OpenAPI no-auth paths vs live `/health` routes | PASS: 9 schema paths match 9 live routes |
+| `/ontology/resolve` | PASS: no-auth response, `auth_mode=NO_AUTH_DEV` |
+| `/ontology/explain` | PASS: no-auth response, `auth_mode=NO_AUTH_DEV` |
+| `/ontology/evidence-map` | PASS: no-auth response, `MATCHED_EXACT`, `auth_mode=NO_AUTH_DEV` |
+| `/ontology/gate-check` | PASS: no-auth response, `verdict=ZERO`, `pass_allowed=false`, `auth_mode=NO_AUTH_DEV` |
+| `/ontology/crosswalk` | PASS: no-auth response, 2 crosswalk items, `auth_mode=NO_AUTH_DEV` |
+| `/ontology/audit-trace` | PASS: no-auth response, masked dry-run trace generated, `auth_mode=NO_AUTH_DEV` |
+| `/dry-run/validate` | PASS: no-auth response, `verdict=ZERO`, `auth_mode=NO_AUTH_DEV` |
+| `/dry-run/type-b-classify` | PASS: no-auth response, `auth_mode=NO_AUTH_DEV` |
+| `/dry-run/rate-lookup` | PASS: no-auth response, no `raw_rate` field exposed, `auth_mode=NO_AUTH_DEV` |
+
+Local limitation:
+
+- `bash tests/curl_smoke_tests.sh` was not used as the final proof because this Windows session hit CRLF handling first, then the environment lacked `jq`. The equivalent route checks above were executed with PowerShell direct HTTP calls.
+- GPT Builder preview UI was verified by user-provided debug log: `/ontology/resolve` returned HTTP 200 dry-run, `ACTION_CALLED: YES`, and `SCT_ONTOLOGY_USED: YES` for `Delivery Order Fee` and `Terminal Handling Charge - Jebel Ali`.
 
 ## 11. References
 
