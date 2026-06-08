@@ -1,0 +1,4472 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d20" for="edge" attr.name="confidence_score" attr.type="double"/>
+<key id="d19" for="edge" attr.name="context" attr.type="string"/>
+<key id="d18" for="edge" attr.name="_tgt" attr.type="string"/>
+<key id="d17" for="edge" attr.name="_src" attr.type="string"/>
+<key id="d16" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d15" for="edge" attr.name="source_location" attr.type="string"/>
+<key id="d14" for="edge" attr.name="source_file" attr.type="string"/>
+<key id="d13" for="edge" attr.name="confidence" attr.type="string"/>
+<key id="d12" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d11" for="node" attr.name="contributor" attr.type="string"/>
+<key id="d10" for="node" attr.name="author" attr.type="string"/>
+<key id="d9" for="node" attr.name="captured_at" attr.type="string"/>
+<key id="d8" for="node" attr.name="source_url" attr.type="string"/>
+<key id="d7" for="node" attr.name="metadata" attr.type="string"/>
+<key id="d6" for="node" attr.name="community_label" attr.type="string"/>
+<key id="d5" for="node" attr.name="community" attr.type="long"/>
+<key id="d4" for="node" attr.name="_origin" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_location" attr.type="string"/>
+<key id="d2" for="node" attr.name="source_file" attr.type="string"/>
+<key id="d1" for="node" attr.name="file_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="undirected"><node id="claude_settings_local">
+  <data key="d0">settings.local.json</data>
+  <data key="d1">code</data>
+  <data key="d2">.claude/settings.local.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">9</data>
+  <data key="d6">Community 9</data>
+</node>
+<node id="claude_settings_local_permissions">
+  <data key="d0">permissions</data>
+  <data key="d1">code</data>
+  <data key="d2">.claude/settings.local.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">9</data>
+  <data key="d6">Community 9</data>
+</node>
+<node id="claude_settings_local_permissions_allow">
+  <data key="d0">allow</data>
+  <data key="d1">code</data>
+  <data key="d2">.claude/settings.local.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">9</data>
+  <data key="d6">Community 9</data>
+</node>
+<node id="claude_settings_local_permissions_deny">
+  <data key="d0">deny</data>
+  <data key="d1">code</data>
+  <data key="d2">.claude/settings.local.json</data>
+  <data key="d3">L20</data>
+  <data key="d4">ast</data>
+  <data key="d5">9</data>
+  <data key="d6">Community 9</data>
+</node>
+<node id="claude_settings_local_permissions_ask">
+  <data key="d0">ask</data>
+  <data key="d1">code</data>
+  <data key="d2">.claude/settings.local.json</data>
+  <data key="d3">L24</data>
+  <data key="d4">ast</data>
+  <data key="d5">9</data>
+  <data key="d6">Community 9</data>
+</node>
+<node id="claude_settings_local_hooks">
+  <data key="d0">hooks</data>
+  <data key="d1">code</data>
+  <data key="d2">.claude/settings.local.json</data>
+  <data key="d3">L30</data>
+  <data key="d4">ast</data>
+  <data key="d5">9</data>
+  <data key="d6">Community 9</data>
+</node>
+<node id="claude_settings_local_hooks_posttooluse">
+  <data key="d0">PostToolUse</data>
+  <data key="d1">code</data>
+  <data key="d2">.claude/settings.local.json</data>
+  <data key="d3">L31</data>
+  <data key="d4">ast</data>
+  <data key="d5">9</data>
+  <data key="d6">Community 9</data>
+</node>
+<node id="lib_evidence">
+  <data key="d0">evidence.js</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/evidence.js</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="lib_evidence_default_rule">
+  <data key="d0">DEFAULT_RULE</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/evidence.js</data>
+  <data key="d3">L180</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="lib_evidence_findrule">
+  <data key="d0">findRule()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/evidence.js</data>
+  <data key="d3">L193</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="lib_evidence_getevidencerequirements">
+  <data key="d0">getEvidenceRequirements()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/evidence.js</data>
+  <data key="d3">L201</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="lib_evidence_validateevidence">
+  <data key="d0">validateEvidence()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/evidence.js</data>
+  <data key="d3">L217</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="lib_evidence_evidence_rule_keys">
+  <data key="d0">EVIDENCE_RULE_KEYS</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/evidence.js</data>
+  <data key="d3">L240</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="lib_ontology_data_raw">
+  <data key="d0">RAW</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology-data.js</data>
+  <data key="d3">L13</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_ontology_data_doc_type">
+  <data key="d0">DOC_TYPE</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology-data.js</data>
+  <data key="d3">L188</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_ontology_data_rate_basis">
+  <data key="d0">RATE_BASIS</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology-data.js</data>
+  <data key="d3">L189</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_ontology_data_charge_type">
+  <data key="d0">CHARGE_TYPE</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology-data.js</data>
+  <data key="d3">L190</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_ontology">
+  <data key="d0">ontology.js</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology.js</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_ontology_resolvedocumenttype">
+  <data key="d0">resolveDocumentType()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology.js</data>
+  <data key="d3">L19</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_ontology_resolveratebasis">
+  <data key="d0">resolveRateBasis()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology.js</data>
+  <data key="d3">L36</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_ontology_explainontologynode">
+  <data key="d0">explainOntologyNode()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/ontology.js</data>
+  <data key="d3">L52</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_type_b_classifier">
+  <data key="d0">type-b-classifier.js</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/type-b-classifier.js</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_type_b_classifier_classifytypeb">
+  <data key="d0">classifyTypeB()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/type-b-classifier.js</data>
+  <data key="d3">L23</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="lib_type_b_classifier_crosswalkscttotypeb">
+  <data key="d0">crosswalkSctToTypeB()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/lib/type-b-classifier.js</data>
+  <data key="d3">L159</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="cloudflare_worker_worker">
+  <data key="d0">worker.js</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_type_b">
+  <data key="d0">TYPE_B</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L54</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_routes">
+  <data key="d0">ROUTES</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L65</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_fetch">
+  <data key="d0">fetch()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L78</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handleresolve">
+  <data key="d0">handleResolve()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L155</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handleexplain">
+  <data key="d0">handleExplain()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L180</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handleevidencemap">
+  <data key="d0">handleEvidenceMap()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L199</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="cloudflare_worker_worker_handlegatecheck">
+  <data key="d0">handleGateCheck()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L228</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handlecrosswalk">
+  <data key="d0">handleCrosswalk()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L246</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handleaudittrace">
+  <data key="d0">handleAuditTrace()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L262</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handledryrunvalidate">
+  <data key="d0">handleDryRunValidate()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L277</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handletypebclassify">
+  <data key="d0">handleTypeBClassify()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L295</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_handleratelookup">
+  <data key="d0">handleRateLookup()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L321</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_resolveterm">
+  <data key="d0">resolveTerm()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L343</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="cloudflare_worker_worker_mapping">
+  <data key="d0">mapping()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L395</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_explainnode">
+  <data key="d0">explainNode()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L411</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="cloudflare_worker_worker_relationedgesfor">
+  <data key="d0">relationEdgesFor()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L478</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_evaluategate">
+  <data key="d0">evaluateGate()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L501</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_maxverdict">
+  <data key="d0">maxVerdict()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L554</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_requiredinputsfor">
+  <data key="d0">requiredInputsFor()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L559</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_crosswalkline">
+  <data key="d0">crosswalkLine()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L569</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_typebfromsctcode">
+  <data key="d0">typeBFromSctCode()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L589</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_sctcodefromtypeb">
+  <data key="d0">sctCodeFromTypeB()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L601</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_documenttypefromsctcode">
+  <data key="d0">documentTypeFromSctCode()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L613</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_ratebasisfromsctcode">
+  <data key="d0">rateBasisFromSctCode()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L624</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_costcenterhintfromtypeb">
+  <data key="d0">costCenterHintFromTypeB()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L632</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_normalizepath">
+  <data key="d0">normalizePath()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L642</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_stripmcpprefix">
+  <data key="d0">stripMcpPrefix()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L648</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_checkauth">
+  <data key="d0">checkAuth()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L654</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_jsonresponse">
+  <data key="d0">jsonResponse()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L666</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_preflightresponse">
+  <data key="d0">preflightResponse()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L681</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_errorpayload">
+  <data key="d0">errorPayload()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L695</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_addmeta">
+  <data key="d0">addMeta()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L704</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_isplainobject">
+  <data key="d0">isPlainObject()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L720</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_safemessage">
+  <data key="d0">safeMessage()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L724</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_makeid">
+  <data key="d0">makeId()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L729</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="cloudflare_worker_worker_masktext">
+  <data key="d0">maskText()</data>
+  <data key="d1">code</data>
+  <data key="d2">cloudflare_worker/worker.js</data>
+  <data key="d3">L736</data>
+  <data key="d4">ast</data>
+  <data key="d5">0</data>
+  <data key="d6">Gate Check and PASS Control</data>
+</node>
+<node id="package_self_check">
+  <data key="d0">package_self_check.json</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_package">
+  <data key="d0">package</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_created_utc">
+  <data key="d0">created_utc</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_checks">
+  <data key="d0">checks</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L4</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_checks_openapi_noauth_yaml_parse">
+  <data key="d0">openapi_noauth_yaml_parse</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L5</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_checks_openapi_apikey_yaml_parse">
+  <data key="d0">openapi_apikey_yaml_parse</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_checks_node_syntax_check">
+  <data key="d0">node_syntax_check</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_checks_node_check_detail">
+  <data key="d0">node_check_detail</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_node_check_detail_available">
+  <data key="d0">available</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_node_check_detail_returncode">
+  <data key="d0">returncode</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L10</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_node_check_detail_stdout">
+  <data key="d0">stdout</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L11</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_node_check_detail_stderr">
+  <data key="d0">stderr</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L12</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_checks_file_count">
+  <data key="d0">file_count</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L14</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="package_self_check_files">
+  <data key="d0">files</data>
+  <data key="d1">code</data>
+  <data key="d2">package_self_check.json</data>
+  <data key="d3">L16</data>
+  <data key="d4">ast</data>
+  <data key="d5">4</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="tests_check_imports">
+  <data key="d0">_check_imports.mjs</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/_check_imports.mjs</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">3</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_evidence_local_test">
+  <data key="d0">_evidence_local_test.mjs</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/_evidence_local_test.mjs</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_local_test_cases">
+  <data key="d0">cases</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/_evidence_local_test.mjs</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">6</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_classify_boe_fee_payload">
+  <data key="d0">classify-boe-fee.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-boe-fee.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">19</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_boe_fee_payload_lines">
+  <data key="d0">lines</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-boe-fee.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">19</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_boe_fee_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-boe-fee.payload.json</data>
+  <data key="d3">L22</data>
+  <data key="d4">ast</data>
+  <data key="d5">19</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_boe_fee_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-boe-fee.payload.json</data>
+  <data key="d3">L23</data>
+  <data key="d4">ast</data>
+  <data key="d5">19</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_boe_fee_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-boe-fee.payload.json</data>
+  <data key="d3">L24</data>
+  <data key="d4">ast</data>
+  <data key="d5">19</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_inspection_fee_payload">
+  <data key="d0">classify-inspection-fee.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-inspection-fee.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">20</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_inspection_fee_payload_lines">
+  <data key="d0">lines</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-inspection-fee.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">20</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_inspection_fee_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-inspection-fee.payload.json</data>
+  <data key="d3">L22</data>
+  <data key="d4">ast</data>
+  <data key="d5">20</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_inspection_fee_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-inspection-fee.payload.json</data>
+  <data key="d3">L23</data>
+  <data key="d4">ast</data>
+  <data key="d5">20</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_classify_inspection_fee_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/classify-inspection-fee.payload.json</data>
+  <data key="d3">L24</data>
+  <data key="d4">ast</data>
+  <data key="d5">20</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_curl_smoke_tests">
+  <data key="d0">curl_smoke_tests.sh</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/curl_smoke_tests.sh</data>
+  <data key="d3">L1</data>
+  <data key="d7">{"language": "bash", "kind": "file"}</data>
+  <data key="d4">ast</data>
+  <data key="d5">21</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="c_users_jichu_downloads_hvdc_sct_ontology_gpt_actions_full_v1_0_hvdc_sct_ontology_gpt_actions_full_v1_0_tests_curl_smoke_tests_sh__entry">
+  <data key="d0">curl_smoke_tests.sh script</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/curl_smoke_tests.sh</data>
+  <data key="d3">L1</data>
+  <data key="d7">{"language": "bash", "kind": "bash_entrypoint"}</data>
+  <data key="d4">ast</data>
+  <data key="d5">21</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_curl_smoke_tests_assert_golden_tc">
+  <data key="d0">assert_golden_tc()</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/curl_smoke_tests.sh</data>
+  <data key="d3">L12</data>
+  <data key="d7">{"language": "bash", "kind": "bash_function"}</data>
+  <data key="d4">ast</data>
+  <data key="d5">21</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_evidence_as_per_offer_payload">
+  <data key="d0">evidence-as-per-offer.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">10</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_as_per_offer_payload_sct_codes">
+  <data key="d0">sct_codes</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">10</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_as_per_offer_payload_provided_evidence">
+  <data key="d0">provided_evidence</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">10</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_as_per_offer_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">10</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_as_per_offer_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">10</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_as_per_offer_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">10</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_at_cost_payload">
+  <data key="d0">evidence-at-cost.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-at-cost.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">11</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_at_cost_payload_sct_codes">
+  <data key="d0">sct_codes</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-at-cost.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">11</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_at_cost_payload_provided_evidence">
+  <data key="d0">provided_evidence</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-at-cost.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">11</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_at_cost_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-at-cost.payload.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">11</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_at_cost_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-at-cost.payload.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">11</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_at_cost_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-at-cost.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">11</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_customs_payload">
+  <data key="d0">evidence-customs.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-customs.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">12</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_customs_payload_sct_codes">
+  <data key="d0">sct_codes</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-customs.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">12</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_customs_payload_provided_evidence">
+  <data key="d0">provided_evidence</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-customs.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">12</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_customs_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-customs.payload.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">12</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_customs_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-customs.payload.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">12</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_customs_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-customs.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">12</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_inspection_payload">
+  <data key="d0">evidence-inspection.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-inspection.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">13</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_inspection_payload_sct_codes">
+  <data key="d0">sct_codes</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-inspection.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">13</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_inspection_payload_provided_evidence">
+  <data key="d0">provided_evidence</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-inspection.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">13</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_inspection_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-inspection.payload.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">13</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_inspection_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-inspection.payload.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">13</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_inspection_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-inspection.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">13</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_map_payload">
+  <data key="d0">evidence-map.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-map.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">14</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_map_payload_sct_codes">
+  <data key="d0">sct_codes</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-map.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">14</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_map_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-map.payload.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">14</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_map_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-map.payload.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">14</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_map_payload_context_shipment_no_masked">
+  <data key="d0">shipment_no_masked</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-map.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">14</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_evidence_map_payload_context_currency">
+  <data key="d0">currency</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/evidence-map.payload.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">14</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload">
+  <data key="d0">gate-check.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_sct_codes">
+  <data key="d0">sct_codes</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_evidence_status">
+  <data key="d0">evidence_status</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_rate_basis_status">
+  <data key="d0">rate_basis_status</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L14</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_final_subtotal_status">
+  <data key="d0">final_subtotal_status</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L15</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L16</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_context_shipment_no_masked">
+  <data key="d0">shipment_no_masked</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L18</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_gate_check_payload_context_currency">
+  <data key="d0">currency</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/gate-check.payload.json</data>
+  <data key="d3">L19</data>
+  <data key="d4">ast</data>
+  <data key="d5">7</data>
+  <data key="d6">Evidence Map and Validation</data>
+</node>
+<node id="tests_rate_lookup_payload">
+  <data key="d0">rate-lookup.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_rate_lookup_payload_charge">
+  <data key="d0">charge</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_rate_lookup_payload_route_key_masked">
+  <data key="d0">route_key_masked</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_rate_lookup_payload_unit">
+  <data key="d0">unit</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L4</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_rate_lookup_payload_type_b">
+  <data key="d0">type_b</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L5</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_rate_lookup_payload_sct_code">
+  <data key="d0">sct_code</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L6</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_rate_lookup_payload_amount">
+  <data key="d0">amount</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_rate_lookup_payload_currency">
+  <data key="d0">currency</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/rate-lookup.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">8</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_resolve_as_per_offer_payload">
+  <data key="d0">resolve-as-per-offer.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">15</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_as_per_offer_payload_ontology_version">
+  <data key="d0">ontology_version</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">15</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_as_per_offer_payload_terms">
+  <data key="d0">terms</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">15</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_as_per_offer_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d3">L7</data>
+  <data key="d4">ast</data>
+  <data key="d5">15</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_as_per_offer_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">15</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_as_per_offer_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">15</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_at_cost_payload">
+  <data key="d0">resolve-at-cost.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-at-cost.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">16</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_at_cost_payload_ontology_version">
+  <data key="d0">ontology_version</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-at-cost.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">16</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_at_cost_payload_terms">
+  <data key="d0">terms</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-at-cost.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">16</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_at_cost_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-at-cost.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">16</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_at_cost_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-at-cost.payload.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">16</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_at_cost_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-at-cost.payload.json</data>
+  <data key="d3">L10</data>
+  <data key="d4">ast</data>
+  <data key="d5">16</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_boe_payload">
+  <data key="d0">resolve-boe.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-boe.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">17</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_boe_payload_ontology_version">
+  <data key="d0">ontology_version</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-boe.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">17</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_boe_payload_terms">
+  <data key="d0">terms</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-boe.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">17</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_boe_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-boe.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">17</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_boe_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-boe.payload.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">17</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_boe_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-boe.payload.json</data>
+  <data key="d3">L10</data>
+  <data key="d4">ast</data>
+  <data key="d5">17</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_cipl_payload_ontology_version">
+  <data key="d0">ontology_version</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-cipl.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_cipl_payload_terms">
+  <data key="d0">terms</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-cipl.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_cipl_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-cipl.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_cipl_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-cipl.payload.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_cipl_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-cipl.payload.json</data>
+  <data key="d3">L10</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_pod_payload">
+  <data key="d0">resolve-pod.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-pod.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">18</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_pod_payload_ontology_version">
+  <data key="d0">ontology_version</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-pod.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">18</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_pod_payload_terms">
+  <data key="d0">terms</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-pod.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">18</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_pod_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-pod.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">18</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_pod_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-pod.payload.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">18</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_pod_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve-pod.payload.json</data>
+  <data key="d3">L10</data>
+  <data key="d4">ast</data>
+  <data key="d5">18</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload">
+  <data key="d0">resolve.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_ontology_version">
+  <data key="d0">ontology_version</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_terms">
+  <data key="d0">terms</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L3</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_context">
+  <data key="d0">context</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L8</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_context_module">
+  <data key="d0">module</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L9</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_context_shipment_no_masked">
+  <data key="d0">shipment_no_masked</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L10</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_context_draft_invoice_ref_masked">
+  <data key="d0">draft_invoice_ref_masked</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L11</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_context_currency">
+  <data key="d0">currency</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L12</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_resolve_payload_context_user_intent">
+  <data key="d0">user_intent</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/resolve.payload.json</data>
+  <data key="d3">L13</data>
+  <data key="d4">ast</data>
+  <data key="d5">5</data>
+  <data key="d6">SCT Ontology Resolver</data>
+</node>
+<node id="tests_type_b_classify_payload">
+  <data key="d0">type-b-classify.payload.json</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/type-b-classify.payload.json</data>
+  <data key="d3">L1</data>
+  <data key="d4">ast</data>
+  <data key="d5">22</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="tests_type_b_classify_payload_lines">
+  <data key="d0">lines</data>
+  <data key="d1">code</data>
+  <data key="d2">tests/type-b-classify.payload.json</data>
+  <data key="d3">L2</data>
+  <data key="d4">ast</data>
+  <data key="d5">22</data>
+  <data key="d6">Regression and Smoke Tests</data>
+</node>
+<node id="commands_deploy_cloudflare_worker_deploy">
+  <data key="d0">Cloudflare Worker Deploy Command</data>
+  <data key="d1">document</data>
+  <data key="d2">.claude/commands/deploy.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="commands_deploy_yaml_parse_validation">
+  <data key="d0">YAML Parse Validation</data>
+  <data key="d1">concept</data>
+  <data key="d2">.claude/commands/deploy.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="commands_deploy_openapi_worker_route_alignment">
+  <data key="d0">OpenAPI Worker Route Alignment</data>
+  <data key="d1">concept</data>
+  <data key="d2">.claude/commands/deploy.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="commands_smoke_test_worker_smoke_test">
+  <data key="d0">Worker Smoke Test</data>
+  <data key="d1">document</data>
+  <data key="d2">.claude/commands/smoke-test.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="commands_smoke_test_nine_action_routes">
+  <data key="d0">Nine Action Routes</data>
+  <data key="d1">concept</data>
+  <data key="d2">.claude/commands/smoke-test.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="claude_hvdc_sct_ontology_gpt_actions">
+  <data key="d0">HVDC SCT Ontology GPT Actions</data>
+  <data key="d1">document</data>
+  <data key="d2">CLAUDE.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="claude_read_only_dry_run_principle">
+  <data key="d0">Read Only Dry Run Principle</data>
+  <data key="d1">rationale</data>
+  <data key="d2">CLAUDE.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="readme_install_full_package">
+  <data key="d0">Full Package Install Guide</data>
+  <data key="d1">document</data>
+  <data key="d2">README_INSTALL.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="readme_install_no_route_404_failure">
+  <data key="d0">NO ROUTE 404 Failure</data>
+  <data key="d1">rationale</data>
+  <data key="d2">README_INSTALL.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_route_decision_root_action_paths">
+  <data key="d0">Root Action Paths</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/ROUTE_DECISION.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_route_decision_mcp_alias_paths">
+  <data key="d0">MCP Alias Paths</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/ROUTE_DECISION.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_execution_plan_execution_plan">
+  <data key="d0">SCT Ontology Improvement Execution Plan</data>
+  <data key="d1">document</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_execution_plan_documenttype">
+  <data key="d0">DocumentType Ontology Nodes</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_execution_plan_ratebasis">
+  <data key="d0">RateBasis Ontology Nodes</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_execution_plan_customs_inspection_override">
+  <data key="d0">Customs Inspection Override</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_execution_plan_final_pass_blockers">
+  <data key="d0">Final PASS Blockers</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_spec_improvement_spec">
+  <data key="d0">SCT Ontology Improvement Spec</data>
+  <data key="d1">document</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_SPEC.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_spec_api_contract">
+  <data key="d0">GPT Actions API Contract</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_SPEC.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="docs_sct_ontology_improvement_spec_masked_non_mutating_contract">
+  <data key="d0">Masked Non Mutating Contract</data>
+  <data key="d1">rationale</data>
+  <data key="d2">docs/SCT_ONTOLOGY_IMPROVEMENT_SPEC.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="specs_2026_06_08_sct_ontology_improvement_design_design_document">
+  <data key="d0">SCT Ontology Improvement Design Document</data>
+  <data key="d1">document</data>
+  <data key="d2">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="specs_2026_06_08_sct_ontology_improvement_design_approved_decisions">
+  <data key="d0">Approved Design Decisions</data>
+  <data key="d1">rationale</data>
+  <data key="d2">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="specs_2026_06_08_sct_ontology_improvement_design_modular_worker_architecture">
+  <data key="d0">Modular Worker Architecture</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="specs_2026_06_08_sct_ontology_improvement_design_phased_release_plan">
+  <data key="d0">Phased Release Plan</data>
+  <data key="d1">concept</data>
+  <data key="d2">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="gpts_gpt_instructions_sct_ontology_router_mandatory_action_router">
+  <data key="d0">Mandatory SCT Ontology Action Router</data>
+  <data key="d1">document</data>
+  <data key="d2">gpts/GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="gpts_gpt_instructions_sct_ontology_router_action_observability">
+  <data key="d0">Action Observability Output Rules</data>
+  <data key="d1">concept</data>
+  <data key="d2">gpts/GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_docx_improvement_plan">
+  <data key="d0">Converted DOCX Improvement Plan</data>
+  <data key="d1">document</data>
+  <data key="d2">graphify-out/converted/SCT_Ontology_Improvement_Plan_DocumentType_RateBasis_CustomsInspection_Override_2bfa3d89.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_line_audit_propagation">
+  <data key="d0">Line Audit Propagation</data>
+  <data key="d1">concept</data>
+  <data key="d2">graphify-out/converted/SCT_Ontology_Improvement_Plan_DocumentType_RateBasis_CustomsInspection_Override_2bfa3d89.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="openapi_hvdc_sct_ontology_actions_apikey_apikey_schema">
+  <data key="d0">API Key OpenAPI Schema</data>
+  <data key="d1">document</data>
+  <data key="d2">openapi/hvdc_sct_ontology_actions.apikey.yaml</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="openapi_hvdc_sct_ontology_actions_apikey_x_api_key_security">
+  <data key="d0">X API Key Security Scheme</data>
+  <data key="d1">concept</data>
+  <data key="d2">openapi/hvdc_sct_ontology_actions.apikey.yaml</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="openapi_hvdc_sct_ontology_actions_noauth_noauth_schema">
+  <data key="d0">No Auth OpenAPI Schema</data>
+  <data key="d1">document</data>
+  <data key="d2">openapi/hvdc_sct_ontology_actions.noauth.yaml</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">2</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="openapi_hvdc_sct_ontology_actions_noauth_operation_set">
+  <data key="d0">OpenAPI Operation Set</data>
+  <data key="d1">concept</data>
+  <data key="d2">openapi/hvdc_sct_ontology_actions.noauth.yaml</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="plan_implementation_plan">
+  <data key="d0">Implementation Plan</data>
+  <data key="d1">document</data>
+  <data key="d2">plan.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<node id="plan_seven_phase_release_strategy">
+  <data key="d0">Seven Phase Release Strategy</data>
+  <data key="d1">concept</data>
+  <data key="d2">plan.md</data>
+  <data key="d3"></data>
+  <data key="d8"></data>
+  <data key="d9"></data>
+  <data key="d10"></data>
+  <data key="d11"></data>
+  <data key="d5">1</data>
+  <data key="d6">OpenAPI and Action Routes</data>
+</node>
+<edge source="claude_settings_local" target="claude_settings_local_hooks">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">.claude/settings.local.json</data>
+  <data key="d15">L30</data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_settings_local</data>
+  <data key="d18">claude_settings_local_hooks</data>
+</edge>
+<edge source="claude_settings_local" target="claude_settings_local_permissions">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">.claude/settings.local.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_settings_local</data>
+  <data key="d18">claude_settings_local_permissions</data>
+</edge>
+<edge source="claude_settings_local_permissions" target="claude_settings_local_permissions_allow">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">.claude/settings.local.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_settings_local_permissions</data>
+  <data key="d18">claude_settings_local_permissions_allow</data>
+</edge>
+<edge source="claude_settings_local_permissions" target="claude_settings_local_permissions_ask">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">.claude/settings.local.json</data>
+  <data key="d15">L24</data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_settings_local_permissions</data>
+  <data key="d18">claude_settings_local_permissions_ask</data>
+</edge>
+<edge source="claude_settings_local_permissions" target="claude_settings_local_permissions_deny">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">.claude/settings.local.json</data>
+  <data key="d15">L20</data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_settings_local_permissions</data>
+  <data key="d18">claude_settings_local_permissions_deny</data>
+</edge>
+<edge source="claude_settings_local_hooks" target="claude_settings_local_hooks_posttooluse">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">.claude/settings.local.json</data>
+  <data key="d15">L31</data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_settings_local_hooks</data>
+  <data key="d18">claude_settings_local_hooks_posttooluse</data>
+</edge>
+<edge source="lib_evidence" target="cloudflare_worker_worker">
+  <data key="d12">imports_from</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L49</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_evidence</data>
+</edge>
+<edge source="lib_evidence" target="lib_evidence_default_rule">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/evidence.js</data>
+  <data key="d15">L180</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_evidence</data>
+  <data key="d18">lib_evidence_default_rule</data>
+</edge>
+<edge source="lib_evidence" target="lib_evidence_evidence_rule_keys">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/evidence.js</data>
+  <data key="d15">L240</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_evidence</data>
+  <data key="d18">lib_evidence_evidence_rule_keys</data>
+</edge>
+<edge source="lib_evidence" target="lib_evidence_findrule">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/evidence.js</data>
+  <data key="d15">L193</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_evidence</data>
+  <data key="d18">lib_evidence_findrule</data>
+</edge>
+<edge source="lib_evidence" target="lib_evidence_getevidencerequirements">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/evidence.js</data>
+  <data key="d15">L201</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_evidence</data>
+  <data key="d18">lib_evidence_getevidencerequirements</data>
+</edge>
+<edge source="lib_evidence" target="lib_evidence_validateevidence">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/evidence.js</data>
+  <data key="d15">L217</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_evidence</data>
+  <data key="d18">lib_evidence_validateevidence</data>
+</edge>
+<edge source="lib_evidence" target="tests_check_imports">
+  <data key="d12">imports_from</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L1</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_evidence</data>
+</edge>
+<edge source="lib_evidence" target="tests_evidence_local_test">
+  <data key="d12">imports_from</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_evidence_local_test.mjs</data>
+  <data key="d15">L1</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_local_test</data>
+  <data key="d18">lib_evidence</data>
+</edge>
+<edge source="lib_evidence_findrule" target="lib_evidence_getevidencerequirements">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/evidence.js</data>
+  <data key="d15">L203</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_evidence_getevidencerequirements</data>
+  <data key="d18">lib_evidence_findrule</data>
+</edge>
+<edge source="lib_evidence_getevidencerequirements" target="cloudflare_worker_worker">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L49</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_evidence_getevidencerequirements</data>
+</edge>
+<edge source="lib_evidence_getevidencerequirements" target="cloudflare_worker_worker_handleevidencemap">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L223</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleevidencemap</data>
+  <data key="d18">lib_evidence_getevidencerequirements</data>
+</edge>
+<edge source="lib_evidence_getevidencerequirements" target="lib_evidence_validateevidence">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/evidence.js</data>
+  <data key="d15">L221</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_evidence_validateevidence</data>
+  <data key="d18">lib_evidence_getevidencerequirements</data>
+</edge>
+<edge source="lib_evidence_getevidencerequirements" target="tests_check_imports">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L1</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_evidence_getevidencerequirements</data>
+</edge>
+<edge source="lib_evidence_getevidencerequirements" target="tests_evidence_local_test">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_evidence_local_test.mjs</data>
+  <data key="d15">L1</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_local_test</data>
+  <data key="d18">lib_evidence_getevidencerequirements</data>
+</edge>
+<edge source="lib_evidence_validateevidence" target="cloudflare_worker_worker">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L49</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_evidence_validateevidence</data>
+</edge>
+<edge source="lib_evidence_validateevidence" target="cloudflare_worker_worker_handleevidencemap">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L214</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleevidencemap</data>
+  <data key="d18">lib_evidence_validateevidence</data>
+</edge>
+<edge source="lib_evidence_validateevidence" target="tests_check_imports">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L1</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_evidence_validateevidence</data>
+</edge>
+<edge source="lib_evidence_validateevidence" target="tests_evidence_local_test">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_evidence_local_test.mjs</data>
+  <data key="d15">L1</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_local_test</data>
+  <data key="d18">lib_evidence_validateevidence</data>
+</edge>
+<edge source="lib_ontology_data_raw" target="lib_ontology">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/ontology-data.js</data>
+  <data key="d15">L13</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_ontology</data>
+  <data key="d18">lib_ontology_data_raw</data>
+</edge>
+<edge source="lib_ontology_data_doc_type" target="lib_ontology">
+  <data key="d12">imports</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/ontology.js</data>
+  <data key="d15">L12</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_ontology</data>
+  <data key="d18">lib_ontology_data_doc_type</data>
+  <data key="d19">import</data>
+</edge>
+<edge source="lib_ontology_data_rate_basis" target="lib_ontology">
+  <data key="d12">imports</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/ontology.js</data>
+  <data key="d15">L12</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_ontology</data>
+  <data key="d18">lib_ontology_data_rate_basis</data>
+  <data key="d19">import</data>
+</edge>
+<edge source="lib_ontology_data_charge_type" target="lib_ontology">
+  <data key="d12">imports</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/ontology.js</data>
+  <data key="d15">L12</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_ontology</data>
+  <data key="d18">lib_ontology_data_charge_type</data>
+  <data key="d19">import</data>
+</edge>
+<edge source="lib_ontology" target="cloudflare_worker_worker">
+  <data key="d12">imports_from</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L47</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_ontology</data>
+</edge>
+<edge source="lib_ontology" target="lib_ontology_explainontologynode">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/ontology.js</data>
+  <data key="d15">L52</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_ontology</data>
+  <data key="d18">lib_ontology_explainontologynode</data>
+</edge>
+<edge source="lib_ontology" target="lib_ontology_resolvedocumenttype">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/ontology.js</data>
+  <data key="d15">L19</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_ontology</data>
+  <data key="d18">lib_ontology_resolvedocumenttype</data>
+</edge>
+<edge source="lib_ontology" target="lib_ontology_resolveratebasis">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/ontology.js</data>
+  <data key="d15">L36</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_ontology</data>
+  <data key="d18">lib_ontology_resolveratebasis</data>
+</edge>
+<edge source="lib_ontology" target="tests_check_imports">
+  <data key="d12">imports_from</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_ontology</data>
+</edge>
+<edge source="lib_ontology_resolvedocumenttype" target="cloudflare_worker_worker">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L47</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_ontology_resolvedocumenttype</data>
+</edge>
+<edge source="lib_ontology_resolvedocumenttype" target="cloudflare_worker_worker_resolveterm">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L360</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_resolveterm</data>
+  <data key="d18">lib_ontology_resolvedocumenttype</data>
+</edge>
+<edge source="lib_ontology_resolvedocumenttype" target="tests_check_imports">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_ontology_resolvedocumenttype</data>
+</edge>
+<edge source="lib_ontology_resolveratebasis" target="cloudflare_worker_worker">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L47</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_ontology_resolveratebasis</data>
+</edge>
+<edge source="lib_ontology_resolveratebasis" target="cloudflare_worker_worker_resolveterm">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L366</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_resolveterm</data>
+  <data key="d18">lib_ontology_resolveratebasis</data>
+</edge>
+<edge source="lib_ontology_resolveratebasis" target="tests_check_imports">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_ontology_resolveratebasis</data>
+</edge>
+<edge source="lib_ontology_explainontologynode" target="cloudflare_worker_worker">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L47</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_ontology_explainontologynode</data>
+</edge>
+<edge source="lib_ontology_explainontologynode" target="cloudflare_worker_worker_explainnode">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L413</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_explainnode</data>
+  <data key="d18">lib_ontology_explainontologynode</data>
+</edge>
+<edge source="lib_ontology_explainontologynode" target="tests_check_imports">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_ontology_explainontologynode</data>
+</edge>
+<edge source="lib_type_b_classifier" target="cloudflare_worker_worker">
+  <data key="d12">imports_from</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L48</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_type_b_classifier</data>
+</edge>
+<edge source="lib_type_b_classifier" target="lib_type_b_classifier_classifytypeb">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/type-b-classifier.js</data>
+  <data key="d15">L23</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_type_b_classifier</data>
+  <data key="d18">lib_type_b_classifier_classifytypeb</data>
+</edge>
+<edge source="lib_type_b_classifier" target="lib_type_b_classifier_crosswalkscttotypeb">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/lib/type-b-classifier.js</data>
+  <data key="d15">L159</data>
+  <data key="d16">1.0</data>
+  <data key="d17">lib_type_b_classifier</data>
+  <data key="d18">lib_type_b_classifier_crosswalkscttotypeb</data>
+</edge>
+<edge source="lib_type_b_classifier" target="tests_check_imports">
+  <data key="d12">imports_from</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_type_b_classifier</data>
+</edge>
+<edge source="lib_type_b_classifier_classifytypeb" target="cloudflare_worker_worker">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L48</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">lib_type_b_classifier_classifytypeb</data>
+</edge>
+<edge source="lib_type_b_classifier_classifytypeb" target="cloudflare_worker_worker_resolveterm">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L374</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_resolveterm</data>
+  <data key="d18">lib_type_b_classifier_classifytypeb</data>
+</edge>
+<edge source="lib_type_b_classifier_classifytypeb" target="tests_check_imports">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_type_b_classifier_classifytypeb</data>
+</edge>
+<edge source="lib_type_b_classifier_crosswalkscttotypeb" target="tests_check_imports">
+  <data key="d12">imports</data>
+  <data key="d19">import</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_check_imports.mjs</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_check_imports</data>
+  <data key="d18">lib_type_b_classifier_crosswalkscttotypeb</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_addmeta">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L704</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_addmeta</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_checkauth">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L654</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_checkauth</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_costcenterhintfromtypeb">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L632</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_costcenterhintfromtypeb</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_crosswalkline">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L569</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_crosswalkline</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_documenttypefromsctcode">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L613</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_documenttypefromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L695</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_evaluategate">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L501</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_evaluategate</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_explainnode">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L411</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_explainnode</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_fetch">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L78</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_fetch</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handleaudittrace">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L262</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handleaudittrace</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handlecrosswalk">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L246</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handlecrosswalk</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handledryrunvalidate">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L277</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handledryrunvalidate</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handleevidencemap">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L199</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handleevidencemap</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handleexplain">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L180</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handleexplain</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handlegatecheck">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L228</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handlegatecheck</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handleratelookup">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L321</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handleratelookup</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handleresolve">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L155</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handleresolve</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_handletypebclassify">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L295</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_handletypebclassify</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_isplainobject">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L720</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_isplainobject</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_jsonresponse">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L666</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_jsonresponse</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_makeid">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L729</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_makeid</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_mapping">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L395</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_mapping</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_masktext">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L736</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_masktext</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_maxverdict">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L554</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_maxverdict</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_normalizepath">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L642</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_normalizepath</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_preflightresponse">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L681</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_preflightresponse</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_ratebasisfromsctcode">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L624</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_ratebasisfromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_relationedgesfor">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L478</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_relationedgesfor</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_requiredinputsfor">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L559</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_requiredinputsfor</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_resolveterm">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L343</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_resolveterm</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_routes">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L65</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_routes</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_safemessage">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L724</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_safemessage</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_sctcodefromtypeb">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L601</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_sctcodefromtypeb</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_stripmcpprefix">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L648</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_stripmcpprefix</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_type_b">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L54</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_type_b</data>
+</edge>
+<edge source="cloudflare_worker_worker" target="cloudflare_worker_worker_typebfromsctcode">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L589</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker</data>
+  <data key="d18">cloudflare_worker_worker_typebfromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_addmeta">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L144</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_addmeta</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_checkauth">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L111</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_checkauth</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L104</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_jsonresponse">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L90</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_jsonresponse</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_normalizepath">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L81</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_normalizepath</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_preflightresponse">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L86</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_preflightresponse</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_safemessage">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L148</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_safemessage</data>
+</edge>
+<edge source="cloudflare_worker_worker_fetch" target="cloudflare_worker_worker_stripmcpprefix">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L82</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_fetch</data>
+  <data key="d18">cloudflare_worker_worker_stripmcpprefix</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleresolve" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L163</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleresolve</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleresolve" target="cloudflare_worker_worker_isplainobject">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L158</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleresolve</data>
+  <data key="d18">cloudflare_worker_worker_isplainobject</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleexplain" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L185</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleexplain</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleexplain" target="cloudflare_worker_worker_explainnode">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L189</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleexplain</data>
+  <data key="d18">cloudflare_worker_worker_explainnode</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleexplain" target="cloudflare_worker_worker_relationedgesfor">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L190</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleexplain</data>
+  <data key="d18">cloudflare_worker_worker_relationedgesfor</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleevidencemap" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L204</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleevidencemap</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker_handlegatecheck" target="cloudflare_worker_worker_evaluategate">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L235</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handlegatecheck</data>
+  <data key="d18">cloudflare_worker_worker_evaluategate</data>
+</edge>
+<edge source="cloudflare_worker_worker_handlecrosswalk" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L251</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handlecrosswalk</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleaudittrace" target="cloudflare_worker_worker_makeid">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L263</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleaudittrace</data>
+  <data key="d18">cloudflare_worker_worker_makeid</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleaudittrace" target="cloudflare_worker_worker_masktext">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L271</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleaudittrace</data>
+  <data key="d18">cloudflare_worker_worker_masktext</data>
+</edge>
+<edge source="cloudflare_worker_worker_handledryrunvalidate" target="cloudflare_worker_worker_evaluategate">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L286</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handledryrunvalidate</data>
+  <data key="d18">cloudflare_worker_worker_evaluategate</data>
+</edge>
+<edge source="cloudflare_worker_worker_handletypebclassify" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L300</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handletypebclassify</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker_handleratelookup" target="cloudflare_worker_worker_errorpayload">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L328</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_handleratelookup</data>
+  <data key="d18">cloudflare_worker_worker_errorpayload</data>
+</edge>
+<edge source="cloudflare_worker_worker_resolveterm" target="cloudflare_worker_worker_mapping">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L348</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_resolveterm</data>
+  <data key="d18">cloudflare_worker_worker_mapping</data>
+</edge>
+<edge source="cloudflare_worker_worker_mapping" target="cloudflare_worker_worker_makeid">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L407</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_mapping</data>
+  <data key="d18">cloudflare_worker_worker_makeid</data>
+</edge>
+<edge source="cloudflare_worker_worker_mapping" target="cloudflare_worker_worker_masktext">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L397</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_mapping</data>
+  <data key="d18">cloudflare_worker_worker_masktext</data>
+</edge>
+<edge source="cloudflare_worker_worker_evaluategate" target="cloudflare_worker_worker_makeid">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L550</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_evaluategate</data>
+  <data key="d18">cloudflare_worker_worker_makeid</data>
+</edge>
+<edge source="cloudflare_worker_worker_evaluategate" target="cloudflare_worker_worker_maxverdict">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L511</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_evaluategate</data>
+  <data key="d18">cloudflare_worker_worker_maxverdict</data>
+</edge>
+<edge source="cloudflare_worker_worker_evaluategate" target="cloudflare_worker_worker_requiredinputsfor">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L549</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_evaluategate</data>
+  <data key="d18">cloudflare_worker_worker_requiredinputsfor</data>
+</edge>
+<edge source="cloudflare_worker_worker_crosswalkline" target="cloudflare_worker_worker_costcenterhintfromtypeb">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L578</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_crosswalkline</data>
+  <data key="d18">cloudflare_worker_worker_costcenterhintfromtypeb</data>
+</edge>
+<edge source="cloudflare_worker_worker_crosswalkline" target="cloudflare_worker_worker_documenttypefromsctcode">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L574</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_crosswalkline</data>
+  <data key="d18">cloudflare_worker_worker_documenttypefromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker_crosswalkline" target="cloudflare_worker_worker_ratebasisfromsctcode">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L576</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_crosswalkline</data>
+  <data key="d18">cloudflare_worker_worker_ratebasisfromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker_crosswalkline" target="cloudflare_worker_worker_typebfromsctcode">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L570</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_crosswalkline</data>
+  <data key="d18">cloudflare_worker_worker_typebfromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker_typebfromsctcode" target="cloudflare_worker_worker_documenttypefromsctcode">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L614</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_documenttypefromsctcode</data>
+  <data key="d18">cloudflare_worker_worker_typebfromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker_typebfromsctcode" target="cloudflare_worker_worker_ratebasisfromsctcode">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L625</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_ratebasisfromsctcode</data>
+  <data key="d18">cloudflare_worker_worker_typebfromsctcode</data>
+</edge>
+<edge source="cloudflare_worker_worker_addmeta" target="cloudflare_worker_worker_isplainobject">
+  <data key="d12">calls</data>
+  <data key="d19">call</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">cloudflare_worker/worker.js</data>
+  <data key="d15">L705</data>
+  <data key="d16">1.0</data>
+  <data key="d17">cloudflare_worker_worker_addmeta</data>
+  <data key="d18">cloudflare_worker_worker_isplainobject</data>
+</edge>
+<edge source="package_self_check" target="package_self_check_checks">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L4</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check</data>
+  <data key="d18">package_self_check_checks</data>
+</edge>
+<edge source="package_self_check" target="package_self_check_created_utc">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check</data>
+  <data key="d18">package_self_check_created_utc</data>
+</edge>
+<edge source="package_self_check" target="package_self_check_files">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L16</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check</data>
+  <data key="d18">package_self_check_files</data>
+</edge>
+<edge source="package_self_check" target="package_self_check_package">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check</data>
+  <data key="d18">package_self_check_package</data>
+</edge>
+<edge source="package_self_check_checks" target="package_self_check_checks_file_count">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L14</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks</data>
+  <data key="d18">package_self_check_checks_file_count</data>
+</edge>
+<edge source="package_self_check_checks" target="package_self_check_checks_node_check_detail">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks</data>
+  <data key="d18">package_self_check_checks_node_check_detail</data>
+</edge>
+<edge source="package_self_check_checks" target="package_self_check_checks_node_syntax_check">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks</data>
+  <data key="d18">package_self_check_checks_node_syntax_check</data>
+</edge>
+<edge source="package_self_check_checks" target="package_self_check_checks_openapi_apikey_yaml_parse">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks</data>
+  <data key="d18">package_self_check_checks_openapi_apikey_yaml_parse</data>
+</edge>
+<edge source="package_self_check_checks" target="package_self_check_checks_openapi_noauth_yaml_parse">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L5</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks</data>
+  <data key="d18">package_self_check_checks_openapi_noauth_yaml_parse</data>
+</edge>
+<edge source="package_self_check_checks_node_check_detail" target="package_self_check_node_check_detail_available">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks_node_check_detail</data>
+  <data key="d18">package_self_check_node_check_detail_available</data>
+</edge>
+<edge source="package_self_check_checks_node_check_detail" target="package_self_check_node_check_detail_returncode">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L10</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks_node_check_detail</data>
+  <data key="d18">package_self_check_node_check_detail_returncode</data>
+</edge>
+<edge source="package_self_check_checks_node_check_detail" target="package_self_check_node_check_detail_stderr">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L12</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks_node_check_detail</data>
+  <data key="d18">package_self_check_node_check_detail_stderr</data>
+</edge>
+<edge source="package_self_check_checks_node_check_detail" target="package_self_check_node_check_detail_stdout">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">package_self_check.json</data>
+  <data key="d15">L11</data>
+  <data key="d16">1.0</data>
+  <data key="d17">package_self_check_checks_node_check_detail</data>
+  <data key="d18">package_self_check_node_check_detail_stdout</data>
+</edge>
+<edge source="tests_evidence_local_test" target="tests_evidence_local_test_cases">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/_evidence_local_test.mjs</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_local_test</data>
+  <data key="d18">tests_evidence_local_test_cases</data>
+</edge>
+<edge source="tests_classify_boe_fee_payload" target="tests_classify_boe_fee_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-boe-fee.payload.json</data>
+  <data key="d15">L22</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_boe_fee_payload</data>
+  <data key="d18">tests_classify_boe_fee_payload_context</data>
+</edge>
+<edge source="tests_classify_boe_fee_payload" target="tests_classify_boe_fee_payload_lines">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-boe-fee.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_boe_fee_payload</data>
+  <data key="d18">tests_classify_boe_fee_payload_lines</data>
+</edge>
+<edge source="tests_classify_boe_fee_payload_context" target="tests_classify_boe_fee_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-boe-fee.payload.json</data>
+  <data key="d15">L23</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_boe_fee_payload_context</data>
+  <data key="d18">tests_classify_boe_fee_payload_context_module</data>
+</edge>
+<edge source="tests_classify_boe_fee_payload_context" target="tests_classify_boe_fee_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-boe-fee.payload.json</data>
+  <data key="d15">L24</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_boe_fee_payload_context</data>
+  <data key="d18">tests_classify_boe_fee_payload_context_user_intent</data>
+</edge>
+<edge source="tests_classify_inspection_fee_payload" target="tests_classify_inspection_fee_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-inspection-fee.payload.json</data>
+  <data key="d15">L22</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_inspection_fee_payload</data>
+  <data key="d18">tests_classify_inspection_fee_payload_context</data>
+</edge>
+<edge source="tests_classify_inspection_fee_payload" target="tests_classify_inspection_fee_payload_lines">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-inspection-fee.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_inspection_fee_payload</data>
+  <data key="d18">tests_classify_inspection_fee_payload_lines</data>
+</edge>
+<edge source="tests_classify_inspection_fee_payload_context" target="tests_classify_inspection_fee_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-inspection-fee.payload.json</data>
+  <data key="d15">L23</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_inspection_fee_payload_context</data>
+  <data key="d18">tests_classify_inspection_fee_payload_context_module</data>
+</edge>
+<edge source="tests_classify_inspection_fee_payload_context" target="tests_classify_inspection_fee_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/classify-inspection-fee.payload.json</data>
+  <data key="d15">L24</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_classify_inspection_fee_payload_context</data>
+  <data key="d18">tests_classify_inspection_fee_payload_context_user_intent</data>
+</edge>
+<edge source="tests_curl_smoke_tests" target="c_users_jichu_downloads_hvdc_sct_ontology_gpt_actions_full_v1_0_hvdc_sct_ontology_gpt_actions_full_v1_0_tests_curl_smoke_tests_sh__entry">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/curl_smoke_tests.sh</data>
+  <data key="d15">L1</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_curl_smoke_tests</data>
+  <data key="d18">c_users_jichu_downloads_hvdc_sct_ontology_gpt_actions_full_v1_0_hvdc_sct_ontology_gpt_actions_full_v1_0_tests_curl_smoke_tests_sh__entry</data>
+</edge>
+<edge source="tests_curl_smoke_tests" target="tests_curl_smoke_tests_assert_golden_tc">
+  <data key="d12">defines</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/curl_smoke_tests.sh</data>
+  <data key="d15">L12</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_curl_smoke_tests</data>
+  <data key="d18">tests_curl_smoke_tests_assert_golden_tc</data>
+</edge>
+<edge source="c_users_jichu_downloads_hvdc_sct_ontology_gpt_actions_full_v1_0_hvdc_sct_ontology_gpt_actions_full_v1_0_tests_curl_smoke_tests_sh__entry" target="tests_curl_smoke_tests_assert_golden_tc">
+  <data key="d12">calls</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/curl_smoke_tests.sh</data>
+  <data key="d15">L42</data>
+  <data key="d16">1.0</data>
+  <data key="d19">call</data>
+  <data key="d17">c_users_jichu_downloads_hvdc_sct_ontology_gpt_actions_full_v1_0_hvdc_sct_ontology_gpt_actions_full_v1_0_tests_curl_smoke_tests_sh__entry</data>
+  <data key="d18">tests_curl_smoke_tests_assert_golden_tc</data>
+</edge>
+<edge source="tests_evidence_as_per_offer_payload" target="tests_evidence_as_per_offer_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_as_per_offer_payload</data>
+  <data key="d18">tests_evidence_as_per_offer_payload_context</data>
+</edge>
+<edge source="tests_evidence_as_per_offer_payload" target="tests_evidence_as_per_offer_payload_provided_evidence">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_as_per_offer_payload</data>
+  <data key="d18">tests_evidence_as_per_offer_payload_provided_evidence</data>
+</edge>
+<edge source="tests_evidence_as_per_offer_payload" target="tests_evidence_as_per_offer_payload_sct_codes">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_as_per_offer_payload</data>
+  <data key="d18">tests_evidence_as_per_offer_payload_sct_codes</data>
+</edge>
+<edge source="tests_evidence_as_per_offer_payload_context" target="tests_evidence_as_per_offer_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_as_per_offer_payload_context</data>
+  <data key="d18">tests_evidence_as_per_offer_payload_context_module</data>
+</edge>
+<edge source="tests_evidence_as_per_offer_payload_context" target="tests_evidence_as_per_offer_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-as-per-offer.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_as_per_offer_payload_context</data>
+  <data key="d18">tests_evidence_as_per_offer_payload_context_user_intent</data>
+</edge>
+<edge source="tests_evidence_at_cost_payload" target="tests_evidence_at_cost_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-at-cost.payload.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_at_cost_payload</data>
+  <data key="d18">tests_evidence_at_cost_payload_context</data>
+</edge>
+<edge source="tests_evidence_at_cost_payload" target="tests_evidence_at_cost_payload_provided_evidence">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-at-cost.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_at_cost_payload</data>
+  <data key="d18">tests_evidence_at_cost_payload_provided_evidence</data>
+</edge>
+<edge source="tests_evidence_at_cost_payload" target="tests_evidence_at_cost_payload_sct_codes">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-at-cost.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_at_cost_payload</data>
+  <data key="d18">tests_evidence_at_cost_payload_sct_codes</data>
+</edge>
+<edge source="tests_evidence_at_cost_payload_context" target="tests_evidence_at_cost_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-at-cost.payload.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_at_cost_payload_context</data>
+  <data key="d18">tests_evidence_at_cost_payload_context_module</data>
+</edge>
+<edge source="tests_evidence_at_cost_payload_context" target="tests_evidence_at_cost_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-at-cost.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_at_cost_payload_context</data>
+  <data key="d18">tests_evidence_at_cost_payload_context_user_intent</data>
+</edge>
+<edge source="tests_evidence_customs_payload" target="tests_evidence_customs_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-customs.payload.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_customs_payload</data>
+  <data key="d18">tests_evidence_customs_payload_context</data>
+</edge>
+<edge source="tests_evidence_customs_payload" target="tests_evidence_customs_payload_provided_evidence">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-customs.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_customs_payload</data>
+  <data key="d18">tests_evidence_customs_payload_provided_evidence</data>
+</edge>
+<edge source="tests_evidence_customs_payload" target="tests_evidence_customs_payload_sct_codes">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-customs.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_customs_payload</data>
+  <data key="d18">tests_evidence_customs_payload_sct_codes</data>
+</edge>
+<edge source="tests_evidence_customs_payload_context" target="tests_evidence_customs_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-customs.payload.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_customs_payload_context</data>
+  <data key="d18">tests_evidence_customs_payload_context_module</data>
+</edge>
+<edge source="tests_evidence_customs_payload_context" target="tests_evidence_customs_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-customs.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_customs_payload_context</data>
+  <data key="d18">tests_evidence_customs_payload_context_user_intent</data>
+</edge>
+<edge source="tests_evidence_inspection_payload" target="tests_evidence_inspection_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-inspection.payload.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_inspection_payload</data>
+  <data key="d18">tests_evidence_inspection_payload_context</data>
+</edge>
+<edge source="tests_evidence_inspection_payload" target="tests_evidence_inspection_payload_provided_evidence">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-inspection.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_inspection_payload</data>
+  <data key="d18">tests_evidence_inspection_payload_provided_evidence</data>
+</edge>
+<edge source="tests_evidence_inspection_payload" target="tests_evidence_inspection_payload_sct_codes">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-inspection.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_inspection_payload</data>
+  <data key="d18">tests_evidence_inspection_payload_sct_codes</data>
+</edge>
+<edge source="tests_evidence_inspection_payload_context" target="tests_evidence_inspection_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-inspection.payload.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_inspection_payload_context</data>
+  <data key="d18">tests_evidence_inspection_payload_context_module</data>
+</edge>
+<edge source="tests_evidence_inspection_payload_context" target="tests_evidence_inspection_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-inspection.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_inspection_payload_context</data>
+  <data key="d18">tests_evidence_inspection_payload_context_user_intent</data>
+</edge>
+<edge source="tests_evidence_map_payload" target="tests_evidence_map_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-map.payload.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_map_payload</data>
+  <data key="d18">tests_evidence_map_payload_context</data>
+</edge>
+<edge source="tests_evidence_map_payload" target="tests_evidence_map_payload_sct_codes">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-map.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_map_payload</data>
+  <data key="d18">tests_evidence_map_payload_sct_codes</data>
+</edge>
+<edge source="tests_evidence_map_payload_context" target="tests_evidence_map_payload_context_currency">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-map.payload.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_map_payload_context</data>
+  <data key="d18">tests_evidence_map_payload_context_currency</data>
+</edge>
+<edge source="tests_evidence_map_payload_context" target="tests_evidence_map_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-map.payload.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_map_payload_context</data>
+  <data key="d18">tests_evidence_map_payload_context_module</data>
+</edge>
+<edge source="tests_evidence_map_payload_context" target="tests_evidence_map_payload_context_shipment_no_masked">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/evidence-map.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_evidence_map_payload_context</data>
+  <data key="d18">tests_evidence_map_payload_context_shipment_no_masked</data>
+</edge>
+<edge source="tests_gate_check_payload" target="tests_gate_check_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L16</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload</data>
+  <data key="d18">tests_gate_check_payload_context</data>
+</edge>
+<edge source="tests_gate_check_payload" target="tests_gate_check_payload_evidence_status">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload</data>
+  <data key="d18">tests_gate_check_payload_evidence_status</data>
+</edge>
+<edge source="tests_gate_check_payload" target="tests_gate_check_payload_final_subtotal_status">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L15</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload</data>
+  <data key="d18">tests_gate_check_payload_final_subtotal_status</data>
+</edge>
+<edge source="tests_gate_check_payload" target="tests_gate_check_payload_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload</data>
+  <data key="d18">tests_gate_check_payload_module</data>
+</edge>
+<edge source="tests_gate_check_payload" target="tests_gate_check_payload_rate_basis_status">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L14</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload</data>
+  <data key="d18">tests_gate_check_payload_rate_basis_status</data>
+</edge>
+<edge source="tests_gate_check_payload" target="tests_gate_check_payload_sct_codes">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload</data>
+  <data key="d18">tests_gate_check_payload_sct_codes</data>
+</edge>
+<edge source="tests_gate_check_payload_module" target="tests_gate_check_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L17</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload_context</data>
+  <data key="d18">tests_gate_check_payload_module</data>
+</edge>
+<edge source="tests_gate_check_payload_context" target="tests_gate_check_payload_context_currency">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L19</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload_context</data>
+  <data key="d18">tests_gate_check_payload_context_currency</data>
+</edge>
+<edge source="tests_gate_check_payload_context" target="tests_gate_check_payload_context_shipment_no_masked">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/gate-check.payload.json</data>
+  <data key="d15">L18</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_gate_check_payload_context</data>
+  <data key="d18">tests_gate_check_payload_context_shipment_no_masked</data>
+</edge>
+<edge source="tests_rate_lookup_payload" target="tests_rate_lookup_payload_amount">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/rate-lookup.payload.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_rate_lookup_payload</data>
+  <data key="d18">tests_rate_lookup_payload_amount</data>
+</edge>
+<edge source="tests_rate_lookup_payload" target="tests_rate_lookup_payload_charge">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/rate-lookup.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_rate_lookup_payload</data>
+  <data key="d18">tests_rate_lookup_payload_charge</data>
+</edge>
+<edge source="tests_rate_lookup_payload" target="tests_rate_lookup_payload_currency">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/rate-lookup.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_rate_lookup_payload</data>
+  <data key="d18">tests_rate_lookup_payload_currency</data>
+</edge>
+<edge source="tests_rate_lookup_payload" target="tests_rate_lookup_payload_route_key_masked">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/rate-lookup.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_rate_lookup_payload</data>
+  <data key="d18">tests_rate_lookup_payload_route_key_masked</data>
+</edge>
+<edge source="tests_rate_lookup_payload" target="tests_rate_lookup_payload_sct_code">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/rate-lookup.payload.json</data>
+  <data key="d15">L6</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_rate_lookup_payload</data>
+  <data key="d18">tests_rate_lookup_payload_sct_code</data>
+</edge>
+<edge source="tests_rate_lookup_payload" target="tests_rate_lookup_payload_type_b">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/rate-lookup.payload.json</data>
+  <data key="d15">L5</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_rate_lookup_payload</data>
+  <data key="d18">tests_rate_lookup_payload_type_b</data>
+</edge>
+<edge source="tests_rate_lookup_payload" target="tests_rate_lookup_payload_unit">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/rate-lookup.payload.json</data>
+  <data key="d15">L4</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_rate_lookup_payload</data>
+  <data key="d18">tests_rate_lookup_payload_unit</data>
+</edge>
+<edge source="tests_resolve_as_per_offer_payload" target="tests_resolve_as_per_offer_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d15">L7</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_as_per_offer_payload</data>
+  <data key="d18">tests_resolve_as_per_offer_payload_context</data>
+</edge>
+<edge source="tests_resolve_as_per_offer_payload" target="tests_resolve_as_per_offer_payload_ontology_version">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_as_per_offer_payload</data>
+  <data key="d18">tests_resolve_as_per_offer_payload_ontology_version</data>
+</edge>
+<edge source="tests_resolve_as_per_offer_payload" target="tests_resolve_as_per_offer_payload_terms">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_as_per_offer_payload</data>
+  <data key="d18">tests_resolve_as_per_offer_payload_terms</data>
+</edge>
+<edge source="tests_resolve_as_per_offer_payload_context" target="tests_resolve_as_per_offer_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_as_per_offer_payload_context</data>
+  <data key="d18">tests_resolve_as_per_offer_payload_context_module</data>
+</edge>
+<edge source="tests_resolve_as_per_offer_payload_context" target="tests_resolve_as_per_offer_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-as-per-offer.payload.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_as_per_offer_payload_context</data>
+  <data key="d18">tests_resolve_as_per_offer_payload_context_user_intent</data>
+</edge>
+<edge source="tests_resolve_at_cost_payload" target="tests_resolve_at_cost_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-at-cost.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_at_cost_payload</data>
+  <data key="d18">tests_resolve_at_cost_payload_context</data>
+</edge>
+<edge source="tests_resolve_at_cost_payload" target="tests_resolve_at_cost_payload_ontology_version">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-at-cost.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_at_cost_payload</data>
+  <data key="d18">tests_resolve_at_cost_payload_ontology_version</data>
+</edge>
+<edge source="tests_resolve_at_cost_payload" target="tests_resolve_at_cost_payload_terms">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-at-cost.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_at_cost_payload</data>
+  <data key="d18">tests_resolve_at_cost_payload_terms</data>
+</edge>
+<edge source="tests_resolve_at_cost_payload_context" target="tests_resolve_at_cost_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-at-cost.payload.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_at_cost_payload_context</data>
+  <data key="d18">tests_resolve_at_cost_payload_context_module</data>
+</edge>
+<edge source="tests_resolve_at_cost_payload_context" target="tests_resolve_at_cost_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-at-cost.payload.json</data>
+  <data key="d15">L10</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_at_cost_payload_context</data>
+  <data key="d18">tests_resolve_at_cost_payload_context_user_intent</data>
+</edge>
+<edge source="tests_resolve_boe_payload" target="tests_resolve_boe_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-boe.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_boe_payload</data>
+  <data key="d18">tests_resolve_boe_payload_context</data>
+</edge>
+<edge source="tests_resolve_boe_payload" target="tests_resolve_boe_payload_ontology_version">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-boe.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_boe_payload</data>
+  <data key="d18">tests_resolve_boe_payload_ontology_version</data>
+</edge>
+<edge source="tests_resolve_boe_payload" target="tests_resolve_boe_payload_terms">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-boe.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_boe_payload</data>
+  <data key="d18">tests_resolve_boe_payload_terms</data>
+</edge>
+<edge source="tests_resolve_boe_payload_context" target="tests_resolve_boe_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-boe.payload.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_boe_payload_context</data>
+  <data key="d18">tests_resolve_boe_payload_context_module</data>
+</edge>
+<edge source="tests_resolve_boe_payload_context" target="tests_resolve_boe_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-boe.payload.json</data>
+  <data key="d15">L10</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_boe_payload_context</data>
+  <data key="d18">tests_resolve_boe_payload_context_user_intent</data>
+</edge>
+<edge source="tests_resolve_cipl_payload_ontology_version" target="tests_resolve_payload">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-cipl.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload</data>
+  <data key="d18">tests_resolve_cipl_payload_ontology_version</data>
+</edge>
+<edge source="tests_resolve_cipl_payload_terms" target="tests_resolve_payload">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-cipl.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload</data>
+  <data key="d18">tests_resolve_cipl_payload_terms</data>
+</edge>
+<edge source="tests_resolve_cipl_payload_context" target="tests_resolve_cipl_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-cipl.payload.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_cipl_payload_context</data>
+  <data key="d18">tests_resolve_cipl_payload_context_module</data>
+</edge>
+<edge source="tests_resolve_cipl_payload_context" target="tests_resolve_cipl_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-cipl.payload.json</data>
+  <data key="d15">L10</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_cipl_payload_context</data>
+  <data key="d18">tests_resolve_cipl_payload_context_user_intent</data>
+</edge>
+<edge source="tests_resolve_cipl_payload_context" target="tests_resolve_payload">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-cipl.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload</data>
+  <data key="d18">tests_resolve_cipl_payload_context</data>
+</edge>
+<edge source="tests_resolve_pod_payload" target="tests_resolve_pod_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-pod.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_pod_payload</data>
+  <data key="d18">tests_resolve_pod_payload_context</data>
+</edge>
+<edge source="tests_resolve_pod_payload" target="tests_resolve_pod_payload_ontology_version">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-pod.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_pod_payload</data>
+  <data key="d18">tests_resolve_pod_payload_ontology_version</data>
+</edge>
+<edge source="tests_resolve_pod_payload" target="tests_resolve_pod_payload_terms">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-pod.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_pod_payload</data>
+  <data key="d18">tests_resolve_pod_payload_terms</data>
+</edge>
+<edge source="tests_resolve_pod_payload_context" target="tests_resolve_pod_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-pod.payload.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_pod_payload_context</data>
+  <data key="d18">tests_resolve_pod_payload_context_module</data>
+</edge>
+<edge source="tests_resolve_pod_payload_context" target="tests_resolve_pod_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve-pod.payload.json</data>
+  <data key="d15">L10</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_pod_payload_context</data>
+  <data key="d18">tests_resolve_pod_payload_context_user_intent</data>
+</edge>
+<edge source="tests_resolve_payload" target="tests_resolve_payload_context">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L8</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload</data>
+  <data key="d18">tests_resolve_payload_context</data>
+</edge>
+<edge source="tests_resolve_payload" target="tests_resolve_payload_ontology_version">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload</data>
+  <data key="d18">tests_resolve_payload_ontology_version</data>
+</edge>
+<edge source="tests_resolve_payload" target="tests_resolve_payload_terms">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L3</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload</data>
+  <data key="d18">tests_resolve_payload_terms</data>
+</edge>
+<edge source="tests_resolve_payload_context" target="tests_resolve_payload_context_currency">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L12</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload_context</data>
+  <data key="d18">tests_resolve_payload_context_currency</data>
+</edge>
+<edge source="tests_resolve_payload_context" target="tests_resolve_payload_context_draft_invoice_ref_masked">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L11</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload_context</data>
+  <data key="d18">tests_resolve_payload_context_draft_invoice_ref_masked</data>
+</edge>
+<edge source="tests_resolve_payload_context" target="tests_resolve_payload_context_module">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L9</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload_context</data>
+  <data key="d18">tests_resolve_payload_context_module</data>
+</edge>
+<edge source="tests_resolve_payload_context" target="tests_resolve_payload_context_shipment_no_masked">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L10</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload_context</data>
+  <data key="d18">tests_resolve_payload_context_shipment_no_masked</data>
+</edge>
+<edge source="tests_resolve_payload_context" target="tests_resolve_payload_context_user_intent">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/resolve.payload.json</data>
+  <data key="d15">L13</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_resolve_payload_context</data>
+  <data key="d18">tests_resolve_payload_context_user_intent</data>
+</edge>
+<edge source="tests_type_b_classify_payload" target="tests_type_b_classify_payload_lines">
+  <data key="d12">contains</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d14">tests/type-b-classify.payload.json</data>
+  <data key="d15">L2</data>
+  <data key="d16">1.0</data>
+  <data key="d17">tests_type_b_classify_payload</data>
+  <data key="d18">tests_type_b_classify_payload_lines</data>
+</edge>
+<edge source="commands_deploy_cloudflare_worker_deploy" target="commands_deploy_openapi_worker_route_alignment">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">.claude/commands/deploy.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">commands_deploy_cloudflare_worker_deploy</data>
+  <data key="d18">commands_deploy_openapi_worker_route_alignment</data>
+</edge>
+<edge source="commands_deploy_cloudflare_worker_deploy" target="commands_deploy_yaml_parse_validation">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">.claude/commands/deploy.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">commands_deploy_cloudflare_worker_deploy</data>
+  <data key="d18">commands_deploy_yaml_parse_validation</data>
+</edge>
+<edge source="commands_deploy_cloudflare_worker_deploy" target="commands_smoke_test_worker_smoke_test">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">.claude/commands/deploy.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">commands_deploy_cloudflare_worker_deploy</data>
+  <data key="d18">commands_smoke_test_worker_smoke_test</data>
+</edge>
+<edge source="commands_deploy_openapi_worker_route_alignment" target="readme_install_no_route_404_failure">
+  <data key="d12">rationale_for</data>
+  <data key="d13">INFERRED</data>
+  <data key="d20">0.85</data>
+  <data key="d14">README_INSTALL.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">readme_install_no_route_404_failure</data>
+  <data key="d18">commands_deploy_openapi_worker_route_alignment</data>
+</edge>
+<edge source="commands_smoke_test_worker_smoke_test" target="commands_smoke_test_nine_action_routes">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">.claude/commands/smoke-test.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">commands_smoke_test_worker_smoke_test</data>
+  <data key="d18">commands_smoke_test_nine_action_routes</data>
+</edge>
+<edge source="claude_hvdc_sct_ontology_gpt_actions" target="claude_read_only_dry_run_principle">
+  <data key="d12">implements</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">CLAUDE.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_hvdc_sct_ontology_gpt_actions</data>
+  <data key="d18">claude_read_only_dry_run_principle</data>
+</edge>
+<edge source="claude_hvdc_sct_ontology_gpt_actions" target="gpts_gpt_instructions_sct_ontology_router_mandatory_action_router">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">CLAUDE.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_hvdc_sct_ontology_gpt_actions</data>
+  <data key="d18">gpts_gpt_instructions_sct_ontology_router_mandatory_action_router</data>
+</edge>
+<edge source="claude_hvdc_sct_ontology_gpt_actions" target="openapi_hvdc_sct_ontology_actions_apikey_apikey_schema">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">CLAUDE.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_hvdc_sct_ontology_gpt_actions</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_apikey_apikey_schema</data>
+</edge>
+<edge source="claude_hvdc_sct_ontology_gpt_actions" target="openapi_hvdc_sct_ontology_actions_noauth_noauth_schema">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">CLAUDE.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">claude_hvdc_sct_ontology_gpt_actions</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_noauth_noauth_schema</data>
+</edge>
+<edge source="claude_read_only_dry_run_principle" target="docs_sct_ontology_improvement_spec_masked_non_mutating_contract">
+  <data key="d12">semantically_similar_to</data>
+  <data key="d13">INFERRED</data>
+  <data key="d20">0.9</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_SPEC.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_spec_masked_non_mutating_contract</data>
+  <data key="d18">claude_read_only_dry_run_principle</data>
+</edge>
+<edge source="readme_install_full_package" target="gpts_gpt_instructions_sct_ontology_router_mandatory_action_router">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">README_INSTALL.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">readme_install_full_package</data>
+  <data key="d18">gpts_gpt_instructions_sct_ontology_router_mandatory_action_router</data>
+</edge>
+<edge source="readme_install_full_package" target="openapi_hvdc_sct_ontology_actions_apikey_apikey_schema">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">README_INSTALL.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">readme_install_full_package</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_apikey_apikey_schema</data>
+</edge>
+<edge source="readme_install_full_package" target="openapi_hvdc_sct_ontology_actions_noauth_noauth_schema">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">README_INSTALL.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">readme_install_full_package</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_noauth_noauth_schema</data>
+</edge>
+<edge source="readme_install_full_package" target="readme_install_no_route_404_failure">
+  <data key="d12">rationale_for</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">README_INSTALL.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">readme_install_full_package</data>
+  <data key="d18">readme_install_no_route_404_failure</data>
+</edge>
+<edge source="docs_route_decision_root_action_paths" target="docs_route_decision_mcp_alias_paths">
+  <data key="d12">conceptually_related_to</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/ROUTE_DECISION.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_route_decision_root_action_paths</data>
+  <data key="d18">docs_route_decision_mcp_alias_paths</data>
+</edge>
+<edge source="docs_route_decision_root_action_paths" target="specs_2026_06_08_sct_ontology_improvement_design_design_document">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">specs_2026_06_08_sct_ontology_improvement_design_design_document</data>
+  <data key="d18">docs_route_decision_root_action_paths</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_docx_improvement_plan">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+  <data key="d18">converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_docx_improvement_plan</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="docs_sct_ontology_improvement_execution_plan_customs_inspection_override">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_customs_inspection_override</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="docs_sct_ontology_improvement_execution_plan_documenttype">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_documenttype</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="docs_sct_ontology_improvement_execution_plan_final_pass_blockers">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_final_pass_blockers</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="docs_sct_ontology_improvement_execution_plan_ratebasis">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_ratebasis</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="docs_sct_ontology_improvement_spec_improvement_spec">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_SPEC.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_spec_improvement_spec</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="specs_2026_06_08_sct_ontology_improvement_design_design_document">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">specs_2026_06_08_sct_ontology_improvement_design_design_document</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_execution_plan" target="specs_2026_06_08_sct_ontology_improvement_design_phased_release_plan">
+  <data key="d12">semantically_similar_to</data>
+  <data key="d13">INFERRED</data>
+  <data key="d20">0.95</data>
+  <data key="d14">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">specs_2026_06_08_sct_ontology_improvement_design_phased_release_plan</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_execution_plan</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_execution_plan_customs_inspection_override" target="converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_docx_improvement_plan">
+  <data key="d12">semantically_similar_to</data>
+  <data key="d13">INFERRED</data>
+  <data key="d20">0.95</data>
+  <data key="d14">graphify-out/converted/SCT_Ontology_Improvement_Plan_DocumentType_RateBasis_CustomsInspection_Override_2bfa3d89.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_docx_improvement_plan</data>
+  <data key="d18">docs_sct_ontology_improvement_execution_plan_customs_inspection_override</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_spec_improvement_spec" target="docs_sct_ontology_improvement_spec_api_contract">
+  <data key="d12">implements</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_SPEC.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_spec_improvement_spec</data>
+  <data key="d18">docs_sct_ontology_improvement_spec_api_contract</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_spec_improvement_spec" target="specs_2026_06_08_sct_ontology_improvement_design_design_document">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">specs_2026_06_08_sct_ontology_improvement_design_design_document</data>
+  <data key="d18">docs_sct_ontology_improvement_spec_improvement_spec</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_spec_api_contract" target="openapi_hvdc_sct_ontology_actions_noauth_operation_set">
+  <data key="d12">conceptually_related_to</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/SCT_ONTOLOGY_IMPROVEMENT_SPEC.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">docs_sct_ontology_improvement_spec_api_contract</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_noauth_operation_set</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_spec_api_contract" target="gpts_gpt_instructions_sct_ontology_router_mandatory_action_router">
+  <data key="d12">conceptually_related_to</data>
+  <data key="d13">INFERRED</data>
+  <data key="d20">0.85</data>
+  <data key="d14">gpts/GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">gpts_gpt_instructions_sct_ontology_router_mandatory_action_router</data>
+  <data key="d18">docs_sct_ontology_improvement_spec_api_contract</data>
+</edge>
+<edge source="docs_sct_ontology_improvement_spec_api_contract" target="plan_implementation_plan">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">plan.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">plan_implementation_plan</data>
+  <data key="d18">docs_sct_ontology_improvement_spec_api_contract</data>
+</edge>
+<edge source="specs_2026_06_08_sct_ontology_improvement_design_design_document" target="plan_implementation_plan">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">plan.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">plan_implementation_plan</data>
+  <data key="d18">specs_2026_06_08_sct_ontology_improvement_design_design_document</data>
+</edge>
+<edge source="specs_2026_06_08_sct_ontology_improvement_design_design_document" target="specs_2026_06_08_sct_ontology_improvement_design_approved_decisions">
+  <data key="d12">rationale_for</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">specs_2026_06_08_sct_ontology_improvement_design_approved_decisions</data>
+  <data key="d18">specs_2026_06_08_sct_ontology_improvement_design_design_document</data>
+</edge>
+<edge source="specs_2026_06_08_sct_ontology_improvement_design_design_document" target="specs_2026_06_08_sct_ontology_improvement_design_modular_worker_architecture">
+  <data key="d12">rationale_for</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">docs/superpowers/specs/2026-06-08-sct-ontology-improvement-design.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">specs_2026_06_08_sct_ontology_improvement_design_modular_worker_architecture</data>
+  <data key="d18">specs_2026_06_08_sct_ontology_improvement_design_design_document</data>
+</edge>
+<edge source="specs_2026_06_08_sct_ontology_improvement_design_phased_release_plan" target="plan_seven_phase_release_strategy">
+  <data key="d12">semantically_similar_to</data>
+  <data key="d13">INFERRED</data>
+  <data key="d20">0.95</data>
+  <data key="d14">plan.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">plan_seven_phase_release_strategy</data>
+  <data key="d18">specs_2026_06_08_sct_ontology_improvement_design_phased_release_plan</data>
+</edge>
+<edge source="gpts_gpt_instructions_sct_ontology_router_mandatory_action_router" target="gpts_gpt_instructions_sct_ontology_router_action_observability">
+  <data key="d12">implements</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">gpts/GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">gpts_gpt_instructions_sct_ontology_router_mandatory_action_router</data>
+  <data key="d18">gpts_gpt_instructions_sct_ontology_router_action_observability</data>
+</edge>
+<edge source="converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_docx_improvement_plan" target="converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_line_audit_propagation">
+  <data key="d12">references</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">graphify-out/converted/SCT_Ontology_Improvement_Plan_DocumentType_RateBasis_CustomsInspection_Override_2bfa3d89.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_docx_improvement_plan</data>
+  <data key="d18">converted_sct_ontology_improvement_plan_documenttype_ratebasis_customsinspection_override_2bfa3d89_line_audit_propagation</data>
+</edge>
+<edge source="openapi_hvdc_sct_ontology_actions_apikey_apikey_schema" target="openapi_hvdc_sct_ontology_actions_apikey_x_api_key_security">
+  <data key="d12">implements</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">openapi/hvdc_sct_ontology_actions.apikey.yaml</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">openapi_hvdc_sct_ontology_actions_apikey_apikey_schema</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_apikey_x_api_key_security</data>
+</edge>
+<edge source="openapi_hvdc_sct_ontology_actions_apikey_apikey_schema" target="openapi_hvdc_sct_ontology_actions_noauth_noauth_schema">
+  <data key="d12">semantically_similar_to</data>
+  <data key="d13">INFERRED</data>
+  <data key="d20">0.95</data>
+  <data key="d14">openapi/hvdc_sct_ontology_actions.apikey.yaml</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">openapi_hvdc_sct_ontology_actions_apikey_apikey_schema</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_noauth_noauth_schema</data>
+</edge>
+<edge source="openapi_hvdc_sct_ontology_actions_noauth_noauth_schema" target="openapi_hvdc_sct_ontology_actions_noauth_operation_set">
+  <data key="d12">implements</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">openapi/hvdc_sct_ontology_actions.noauth.yaml</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">openapi_hvdc_sct_ontology_actions_noauth_noauth_schema</data>
+  <data key="d18">openapi_hvdc_sct_ontology_actions_noauth_operation_set</data>
+</edge>
+<edge source="plan_implementation_plan" target="plan_seven_phase_release_strategy">
+  <data key="d12">implements</data>
+  <data key="d13">EXTRACTED</data>
+  <data key="d20">1.0</data>
+  <data key="d14">plan.md</data>
+  <data key="d15"></data>
+  <data key="d16">1.0</data>
+  <data key="d17">plan_implementation_plan</data>
+  <data key="d18">plan_seven_phase_release_strategy</data>
+</edge>
+</graph></graphml>

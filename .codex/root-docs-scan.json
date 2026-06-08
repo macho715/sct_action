@@ -1,0 +1,510 @@
+{
+  "repo": "C:\\Users\\jichu\\Downloads\\HVDC_SCT_ONTOLOGY_GPT_ACTIONS_FULL_v1_0\\HVDC_SCT_ONTOLOGY_GPT_ACTIONS_FULL_v1_0",
+  "generated_at_utc": "2026-06-08T05:15:08.374936+00:00",
+  "config": {
+    "path": null,
+    "scan_parallelism": 5,
+    "ignore_dirs": [
+      ".DS_Store",
+      ".git",
+      ".hg",
+      ".idea",
+      ".mypy_cache",
+      ".next",
+      ".pytest_cache",
+      ".ruff_cache",
+      ".svn",
+      ".turbo",
+      ".venv",
+      ".vscode",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "node_modules",
+      "target",
+      "venv"
+    ],
+    "target_docs": {
+      "README": "README.md",
+      "SYSTEM_ARCHITECTURE": "SYSTEM_ARCHITECTURE.md",
+      "LAYOUT": "LAYOUT.md",
+      "CHANGELOG": "CHANGELOG.md",
+      "PLAN": "PLAN.md"
+    },
+    "agent_globs": [
+      ".codex/agents/*.toml",
+      ".github/agents/*.agent.md",
+      ".claude/agents/*.md",
+      "agents/*.md",
+      "docs/agents/*.md"
+    ],
+    "placeholder_when_missing": false,
+    "update_agent_docs": false,
+    "strict": {
+      "enabled_by_default": false,
+      "missing_tool": "warn",
+      "markdownlint": true,
+      "vale": false,
+      "link_check": true,
+      "mermaid_render": true,
+      "secret_scan": true,
+      "windows_case_collision": true
+    }
+  },
+  "records": [
+    {
+      "path": ".claude\\commands\\deploy.md",
+      "kind": "doc",
+      "size": 1169,
+      "sha256_12": "cb70477da757"
+    },
+    {
+      "path": ".claude\\commands\\smoke-test.md",
+      "kind": "doc",
+      "size": 1431,
+      "sha256_12": "fa26cad41201"
+    },
+    {
+      "path": ".claude\\settings.local.json",
+      "kind": "config",
+      "size": 1416,
+      "sha256_12": "336ad9283681"
+    },
+    {
+      "path": ".wrangler\\cache\\wrangler-account.json",
+      "kind": "config",
+      "size": 111,
+      "sha256_12": "6e6eb7276efe"
+    },
+    {
+      "path": "CLAUDE.md",
+      "kind": "doc",
+      "size": 4949,
+      "sha256_12": "958fc88b6a64"
+    },
+    {
+      "path": "README_INSTALL.md",
+      "kind": "doc",
+      "size": 2267,
+      "sha256_12": "917ba2b6c1f6"
+    },
+    {
+      "path": "cloudflare_worker\\lib\\evidence.js",
+      "kind": "code",
+      "size": 7897,
+      "sha256_12": "cc0a88112356"
+    },
+    {
+      "path": "cloudflare_worker\\lib\\gate.js",
+      "kind": "code",
+      "size": 10334,
+      "sha256_12": "3b045c22e242"
+    },
+    {
+      "path": "cloudflare_worker\\lib\\ontology-data.js",
+      "kind": "code",
+      "size": 5537,
+      "sha256_12": "7fa2f8d888c6"
+    },
+    {
+      "path": "cloudflare_worker\\lib\\ontology.js",
+      "kind": "code",
+      "size": 3217,
+      "sha256_12": "c05facdecff0"
+    },
+    {
+      "path": "cloudflare_worker\\lib\\type-b-classifier.js",
+      "kind": "code",
+      "size": 6626,
+      "sha256_12": "0c0ad5782f80"
+    },
+    {
+      "path": "cloudflare_worker\\worker.js",
+      "kind": "code",
+      "size": 27711,
+      "sha256_12": "19a1a2e84c2a"
+    },
+    {
+      "path": "docs\\ROUTE_DECISION.md",
+      "kind": "doc",
+      "size": 536,
+      "sha256_12": "18c28f653c82"
+    },
+    {
+      "path": "docs\\SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md",
+      "kind": "doc",
+      "size": 12894,
+      "sha256_12": "4760e06451b0"
+    },
+    {
+      "path": "docs\\SCT_ONTOLOGY_IMPROVEMENT_SPEC.md",
+      "kind": "doc",
+      "size": 16849,
+      "sha256_12": "6a7cfba9cb29"
+    },
+    {
+      "path": "docs\\superpowers\\reports\\2026-06-08-sct-ontology-deployment.md",
+      "kind": "doc",
+      "size": 7042,
+      "sha256_12": "d9ac1f7a018a"
+    },
+    {
+      "path": "docs\\superpowers\\specs\\2026-06-08-sct-ontology-improvement-design.md",
+      "kind": "doc",
+      "size": 19170,
+      "sha256_12": "a8f28e699117"
+    },
+    {
+      "path": "gpts\\GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md",
+      "kind": "doc",
+      "size": 4834,
+      "sha256_12": "de11160933fd"
+    },
+    {
+      "path": "graphify-out\\.graphify_ast.json",
+      "kind": "config",
+      "size": 127513,
+      "sha256_12": "38b485405312"
+    },
+    {
+      "path": "graphify-out\\.graphify_detect.json",
+      "kind": "config",
+      "size": 6301,
+      "sha256_12": "a6984083e6cf"
+    },
+    {
+      "path": "graphify-out\\.graphify_semantic_new.json",
+      "kind": "config",
+      "size": 22287,
+      "sha256_12": "7e8f9fbd8ca5"
+    },
+    {
+      "path": "graphify-out\\.graphify_uncached.txt",
+      "kind": "doc",
+      "size": 1900,
+      "sha256_12": "77e002131903"
+    },
+    {
+      "path": "graphify-out\\GRAPH_REPORT.md",
+      "kind": "doc",
+      "size": 9274,
+      "sha256_12": "b8da2d575331"
+    },
+    {
+      "path": "graphify-out\\GRAPH_SUMMARY.json",
+      "kind": "config",
+      "size": 242,
+      "sha256_12": "84f0bfbdb4ef"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\23b83086b758ff9799b8a80664d924cb46da82d03ebb401ba98387c3b523f0be.json",
+      "kind": "config",
+      "size": 7818,
+      "sha256_12": "16c847cf43da"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\2abd33e28cda1c2b2a5b06d0cfcb8d068e804734d54c9957aa59e7b8ae9ae569.json",
+      "kind": "config",
+      "size": 3116,
+      "sha256_12": "227ca0cb165b"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\5160864e504d788de0cb722646059a1e0856e5c681e9e47c4b63f589d92ed2b2.json",
+      "kind": "config",
+      "size": 2242,
+      "sha256_12": "f0b81428323a"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\530baff8370fa4f5dd4fd028a854b5eeb609352e59fab31ec1d351d3424221f7.json",
+      "kind": "config",
+      "size": 3357,
+      "sha256_12": "b878ec6fd862"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\544b2f78629672d2809524ffd05b9cb0c1261c665b968cad1783d7cef4dffb67.json",
+      "kind": "config",
+      "size": 3055,
+      "sha256_12": "83e24c256240"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\674371b4b4dce5e325a1de3ed8e56c1e271a07417c37f8738aa5332398fbfab3.json",
+      "kind": "config",
+      "size": 3067,
+      "sha256_12": "49d158a9e488"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\773f6ba9073e0928e8e20e0d898dde4fb060f3fa78fdc39798a0551119da9b9d.json",
+      "kind": "config",
+      "size": 3158,
+      "sha256_12": "9fa67c4f4b56"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\8302c42e0a0e5db14176056d7967b3422d0596a0d5d526e9896beca86e4b7b3c.json",
+      "kind": "config",
+      "size": 4506,
+      "sha256_12": "58a5418f6c6f"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\8638b1d7cdefb878e16d5b9a7d97bd249cc60d1703e70afeaf0aea99fa8f991f.json",
+      "kind": "config",
+      "size": 3356,
+      "sha256_12": "28909046ab89"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\9cfea60ed39d5f7d549c021dcb67602b7d0005341c4edc9abb45dc0e713238a3.json",
+      "kind": "config",
+      "size": 4869,
+      "sha256_12": "866966514275"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\a8d91d419ca53eab6e24b960b2aa1504e0b57a0f482188757b9f39e3e239e7b3.json",
+      "kind": "config",
+      "size": 3794,
+      "sha256_12": "96ee3239f16d"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\aa5be12fe30db46a8d5e6fa28d87a4b80ebf87c6b2333f7d958d717927c81f6d.json",
+      "kind": "config",
+      "size": 3389,
+      "sha256_12": "ca4bd59a8d35"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\b9e227eb9b2b7a331e94f6ca3579d50eb71519b807a4cf83663fe0aadb22d989.json",
+      "kind": "config",
+      "size": 2403,
+      "sha256_12": "a9a532b15111"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\c20722476ab57de53af702e49ef605b0d24b215368fb8261416444bb912426ed.json",
+      "kind": "config",
+      "size": 3404,
+      "sha256_12": "751f4b5da89c"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\cd716abdae4735d8b8af48259ce5555589f2e15d589407e54478138db16b1cd3.json",
+      "kind": "config",
+      "size": 3210,
+      "sha256_12": "6ce4c33af793"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\e9cc5e8ec7a5ccf6636e0d1e41811ecdd7418ef09b1f3779f0f92222ef7144a5.json",
+      "kind": "config",
+      "size": 2025,
+      "sha256_12": "02d4557bc202"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\f30535fb21e4373f33912d8c0dc264c95348a1524794f0f27a3f1da9cb94499f.json",
+      "kind": "config",
+      "size": 3489,
+      "sha256_12": "5082e80de1bd"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\f8b0bd08a380f8cdc1dbafb88b968ec3a6974be533190902f74041a596bf68e2.json",
+      "kind": "config",
+      "size": 823,
+      "sha256_12": "0fde30c2b2b4"
+    },
+    {
+      "path": "graphify-out\\cache\\ast\\fb5205b8dc37d0d5311753984de14c5fe5ebc02b09b1e6b05765a977f6c5bf26.json",
+      "kind": "config",
+      "size": 7258,
+      "sha256_12": "68a25ac44959"
+    },
+    {
+      "path": "graphify-out\\cache\\stat-index.json",
+      "kind": "config",
+      "size": 8604,
+      "sha256_12": "441bc3e6fa0b"
+    },
+    {
+      "path": "graphify-out\\converted\\SCT_Ontology_Improvement_Plan_DocumentType_RateBasis_CustomsInspection_Override_2bfa3d89.md",
+      "kind": "doc",
+      "size": 14533,
+      "sha256_12": "7228de0528ab"
+    },
+    {
+      "path": "graphify-out\\graph.json",
+      "kind": "config",
+      "size": 162439,
+      "sha256_12": "c1d78fce89c7"
+    },
+    {
+      "path": "openapi\\hvdc_sct_ontology_actions.apikey.yaml",
+      "kind": "config",
+      "size": 30447,
+      "sha256_12": "2eb28e0c60c0"
+    },
+    {
+      "path": "openapi\\hvdc_sct_ontology_actions.noauth.yaml",
+      "kind": "config",
+      "size": 29980,
+      "sha256_12": "10181db508a3"
+    },
+    {
+      "path": "package_self_check.json",
+      "kind": "config",
+      "size": 2525,
+      "sha256_12": "60dd7f043e30"
+    },
+    {
+      "path": "plan.md",
+      "kind": "doc",
+      "size": 9730,
+      "sha256_12": "093ab43c6d27"
+    },
+    {
+      "path": "tests\\classify-boe-fee.payload.json",
+      "kind": "config",
+      "size": 579,
+      "sha256_12": "cad79fcc233c"
+    },
+    {
+      "path": "tests\\classify-inspection-fee.payload.json",
+      "kind": "config",
+      "size": 600,
+      "sha256_12": "8939a822f255"
+    },
+    {
+      "path": "tests\\curl_smoke_tests.sh",
+      "kind": "code",
+      "size": 11021,
+      "sha256_12": "9defe0029b75"
+    },
+    {
+      "path": "tests\\evidence-as-per-offer.payload.json",
+      "kind": "config",
+      "size": 270,
+      "sha256_12": "fd09fdee04bd"
+    },
+    {
+      "path": "tests\\evidence-at-cost.payload.json",
+      "kind": "config",
+      "size": 320,
+      "sha256_12": "33313be67de4"
+    },
+    {
+      "path": "tests\\evidence-customs.payload.json",
+      "kind": "config",
+      "size": 314,
+      "sha256_12": "f2aa660ea11a"
+    },
+    {
+      "path": "tests\\evidence-inspection.payload.json",
+      "kind": "config",
+      "size": 266,
+      "sha256_12": "e88f55477cb6"
+    },
+    {
+      "path": "tests\\evidence-map.payload.json",
+      "kind": "config",
+      "size": 218,
+      "sha256_12": "6f27295d3112"
+    },
+    {
+      "path": "tests\\gate-check.payload.json",
+      "kind": "config",
+      "size": 473,
+      "sha256_12": "0b0ab333fe2b"
+    },
+    {
+      "path": "tests\\gate-evidence-gap-dem-det.payload.json",
+      "kind": "config",
+      "size": 453,
+      "sha256_12": "b6e6839a83bf"
+    },
+    {
+      "path": "tests\\gate-missing-subtotal.payload.json",
+      "kind": "config",
+      "size": 793,
+      "sha256_12": "d096250d3756"
+    },
+    {
+      "path": "tests\\gate-pass.payload.json",
+      "kind": "config",
+      "size": 455,
+      "sha256_12": "c06060273830"
+    },
+    {
+      "path": "tests\\gate-rate-basis-conflict.payload.json",
+      "kind": "config",
+      "size": 472,
+      "sha256_12": "728f33a644f1"
+    },
+    {
+      "path": "tests\\rate-lookup.payload.json",
+      "kind": "config",
+      "size": 212,
+      "sha256_12": "21d2d8835618"
+    },
+    {
+      "path": "tests\\resolve-as-per-offer.payload.json",
+      "kind": "config",
+      "size": 224,
+      "sha256_12": "769860679534"
+    },
+    {
+      "path": "tests\\resolve-at-cost.payload.json",
+      "kind": "config",
+      "size": 237,
+      "sha256_12": "9e355e1c30b5"
+    },
+    {
+      "path": "tests\\resolve-boe.payload.json",
+      "kind": "config",
+      "size": 239,
+      "sha256_12": "48ae61ee9421"
+    },
+    {
+      "path": "tests\\resolve-cipl.payload.json",
+      "kind": "config",
+      "size": 239,
+      "sha256_12": "be127aba94ec"
+    },
+    {
+      "path": "tests\\resolve-line-audit.payload.json",
+      "kind": "config",
+      "size": 322,
+      "sha256_12": "fa58214c4d7b"
+    },
+    {
+      "path": "tests\\resolve-pod.payload.json",
+      "kind": "config",
+      "size": 238,
+      "sha256_12": "297e3135571b"
+    },
+    {
+      "path": "tests\\resolve.payload.json",
+      "kind": "config",
+      "size": 373,
+      "sha256_12": "449a4c414c04"
+    },
+    {
+      "path": "tests\\type-b-classify.payload.json",
+      "kind": "config",
+      "size": 397,
+      "sha256_12": "034bf437f91d"
+    },
+    {
+      "path": "wrangler.toml",
+      "kind": "config",
+      "size": 337,
+      "sha256_12": "2c7decde451e"
+    }
+  ],
+  "counts": {
+    "code": 7,
+    "doc": 14,
+    "config": 52,
+    "agent_profiles": 0
+  },
+  "agent_profiles": [],
+  "target_docs": {
+    "README": "README.md",
+    "SYSTEM_ARCHITECTURE": "SYSTEM_ARCHITECTURE.md",
+    "LAYOUT": "LAYOUT.md",
+    "CHANGELOG": "CHANGELOG.md",
+    "PLAN": "plan.md"
+  },
+  "warnings": []
+}
