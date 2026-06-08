@@ -1,0 +1,11 @@
+{
+  "module": "invoice-audit",
+  "sct_codes": ["SCT.CHARGE.CUSTOMS_CLEARANCE"],
+  "subtotal": { "status": "MATCH", "amount": 12345.67, "currency": "USD" },
+  "rate_basis": { "status": "CONFLICT", "source": "AS_PER_OFFER" },
+  "evidence_status": [
+    { "sct_code": "SCT.CHARGE.CUSTOMS_CLEARANCE", "status": "MATCHED_EXACT", "document_ref_masked": "BOE-MASKED-002" }
+  ],
+  "evidence_gaps": [],
+  "type_b_tie_out": { "status": "TIED", "confidence_min": 0.90 }
+}

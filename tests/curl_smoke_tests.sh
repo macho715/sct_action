@@ -136,6 +136,50 @@ curl -sS -X POST "$BASE_URL/ontology/gate-check" \
   --data @tests/gate-check.payload.json | jq .
 
 echo
+echo "9a) Golden TC-GATE-001: missing final subtotal → ZERO, pass_allowed=false"
+response=$(curl -sS -X POST "$BASE_URL/ontology/gate-check" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/gate-missing-subtotal.payload.json)
+echo "$response" | jq .
+actual_gate=$(echo "$response" | jq -r '.gate_result // empty')
+actual_pass=$(echo "$response" | jq -r '.pass_allowed // empty')
+assert_golden_tc "TC-GATE-001 gate_result" "ZERO" "$actual_gate"
+assert_golden_tc "TC-GATE-001 pass_allowed" "false" "$actual_pass"
+
+echo
+echo "9b) Golden TC-GATE-002: rate basis CONFLICT → ZERO"
+response=$(curl -sS -X POST "$BASE_URL/ontology/gate-check" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/gate-rate-basis-conflict.payload.json)
+echo "$response" | jq .
+actual_gate=$(echo "$response" | jq -r '.gate_result // empty')
+assert_golden_tc "TC-GATE-002 gate_result" "ZERO" "$actual_gate"
+
+echo
+echo "9c) Golden TC-GATE-003: DEM/DET evidence gap → ZERO"
+response=$(curl -sS -X POST "$BASE_URL/ontology/gate-check" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/gate-evidence-gap-dem-det.payload.json)
+echo "$response" | jq .
+actual_gate=$(echo "$response" | jq -r '.gate_result // empty')
+assert_golden_tc "TC-GATE-003 gate_result" "ZERO" "$actual_gate"
+
+echo
+echo "9d) Golden TC-GATE-004: happy path (full match) → PASS, pass_allowed=true"
+response=$(curl -sS -X POST "$BASE_URL/ontology/gate-check" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/gate-pass.payload.json)
+echo "$response" | jq .
+actual_gate=$(echo "$response" | jq -r '.gate_result // empty')
+actual_pass=$(echo "$response" | jq -r '.pass_allowed // empty')
+assert_golden_tc "TC-GATE-004 gate_result" "PASS" "$actual_gate"
+assert_golden_tc "TC-GATE-004 pass_allowed" "true" "$actual_pass"
+
+echo
 echo "10) dryRunClassifyTypeB"
 curl -sS -X POST "$BASE_URL/dry-run/type-b-classify" \
   -H "Content-Type: application/json" \
@@ -213,4 +257,4 @@ curl -sS -X POST "$BASE_URL/ontology/audit-trace" \
   -d '{"request_id":"REQ-TEST","verdict":"AMBER","module":"invoice-audit"}' | jq .
 
 echo
-echo "Phase 1 + 2 + 3 smoke tests complete. (11 Golden TC assertions + 10 routes)"
+echo "Phase 1 + 2 + 3 + 4 smoke tests complete. (15 Golden TC assertions + 10 routes)"

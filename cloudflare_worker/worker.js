@@ -43,13 +43,25 @@
 // - Extended rules: Customs/Inspection/AT_COST/AS_PER_OFFER/DO/THC/INLAND/DETENTION/STORAGE/BL
 // - New fields: required_evidence_codes, rule_source, reviewer_action
 // - validateEvidence(pack) helper for MATCHED_EXACT / PARTIAL / MISSING
+//
+// v2.3.0 (Phase 4):
+// - Gate Check extracted to lib/gate.js
+// - checkGate({subtotal, rate_basis, evidence_status, evidence_gaps, type_b_tie_out})
+//   returns {gate_result, pass_allowed, gates, blocking, reviewer_action}
+// - Final subtotal missing now blocks PASS (was AMBER in v2.2.0)
+// - Rate basis MISSING/CONFLICT blocks PASS (was AMBER for non-invoice modules)
+// - Categorical evidence gaps (HS_UAE_CODE_MISSING, EVIDENCE_GAP_DEM_DET,
+//   OOG_STOWAGE_NOTES_MISSING, FINAL_RECON_NOT_DONE, APPROVAL_NOT_LINKED) → ZERO
+// - TYPE-B tie-out gate added (BROKEN → ZERO, PARTIAL → AMBER)
+// - Backward compatible: legacy flat input shape still accepted.
 
 import { resolveDocumentType, resolveRateBasis, explainOntologyNode } from "./lib/ontology.js";
 import { classifyTypeB } from "./lib/type-b-classifier.js";
 import { getEvidenceRequirements, validateEvidence } from "./lib/evidence.js";
+import { checkGate } from "./lib/gate.js";
 
-const DEFAULT_ONTOLOGY_VERSION = "SCT-LOGI-2026.06-v2.1";
-const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.2.0";
+const DEFAULT_ONTOLOGY_VERSION = "SCT-LOGI-2026.06-v2.3";
+const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.3.0";
 
 const TYPE_B = Object.freeze({
   CUSTOMS: "Customs",
@@ -226,21 +238,20 @@ function handleEvidenceMap(body) {
 }
 
 function handleGateCheck(body) {
-  const moduleName = body.module || body.context?.module || "invoice-audit";
-  const evidenceStatus = Array.isArray(body.evidence_status) ? body.evidence_status : [];
-  const rateBasisStatus = body.rate_basis_status || "NOT_CHECKED";
-  const finalSubtotalStatus = body.final_subtotal_status || "NOT_APPLICABLE";
-  const sctCodes = Array.isArray(body.sct_codes) ? body.sct_codes : [];
-
-  const gate = evaluateGate({
-    moduleName,
-    sctCodes,
-    evidenceStatus,
-    rateBasisStatus,
-    finalSubtotalStatus,
+  const gate = checkGate({
+    module: body.module || body.context?.module,
+    sct_codes: body.sct_codes,
+    evidence_status: body.evidence_status,
+    subtotal: body.subtotal,
+    rate_basis: body.rate_basis,
+    rate_basis_status: body.rate_basis_status,
+    final_subtotal_status: body.final_subtotal_status,
+    evidence_gaps: body.evidence_gaps,
+    type_b_tie_out: body.type_b_tie_out,
+    context: body.context,
   });
 
-  return gate;
+  return bridgeGateResult(gate);
 }
 
 function handleCrosswalk(body) {
@@ -283,13 +294,21 @@ function handleDryRunValidate(body) {
     note: "Derived from invoice audit payload line.",
   }));
 
-  return evaluateGate({
-    moduleName: "invoice-audit",
-    sctCodes: lines.map((line) => line.sct_code || sctCodeFromTypeB(line.type_b)).filter(Boolean),
-    evidenceStatus,
-    rateBasisStatus: body.rate_basis_status || "NOT_CHECKED",
-    finalSubtotalStatus: body.final_subtotal_before_vat == null ? "MISSING" : "MATCH",
+  const subtotalStatus = body.final_subtotal_before_vat == null ? "MISSING" : "MATCH";
+  const rateBasisStatus = body.rate_basis_status || "NOT_CHECKED";
+
+  const gate = checkGate({
+    module: "invoice-audit",
+    sct_codes: lines.map((line) => line.sct_code || sctCodeFromTypeB(line.type_b)).filter(Boolean),
+    evidence_status: evidenceStatus,
+    subtotal: { status: subtotalStatus, amount: body.final_subtotal_before_vat ?? null, currency: body.context?.currency || "USD" },
+    rate_basis: { status: rateBasisStatus },
+    evidence_gaps: body.evidence_gaps,
+    type_b_tie_out: body.type_b_tie_out,
+    context: body.context,
   });
+
+  return bridgeGateResult(gate);
 }
 
 function handleTypeBClassify(body) {
@@ -498,72 +517,23 @@ function relationEdgesFor(sctCode) {
   return [];
 }
 
-function evaluateGate({ moduleName, sctCodes, evidenceStatus, rateBasisStatus, finalSubtotalStatus }) {
-  const gates = [];
-  let verdict = "PASS";
-
-  const statusValues = evidenceStatus.map((x) => String(x.status || "").toUpperCase());
-
-  if (statusValues.includes("CONFLICT")) {
-    verdict = "ZERO";
-    gates.push({ gate: "evidence_status", status: "CONFLICT", note: "Evidence conflict found. Human review required." });
-  } else if (statusValues.includes("MISSING")) {
-    verdict = maxVerdict(verdict, "AMBER");
-    gates.push({ gate: "evidence_status", status: "MISSING", note: "Required evidence is missing." });
-  } else if (statusValues.includes("PARTIAL") || statusValues.includes("NOT_APPLICABLE") || statusValues.length === 0) {
-    verdict = maxVerdict(verdict, "AMBER");
-    gates.push({ gate: "evidence_status", status: "PARTIAL_OR_NOT_CHECKED", note: "Evidence is partial or not checked." });
-  } else {
-    gates.push({ gate: "evidence_status", status: "MATCHED", note: "Evidence status indicates matched support." });
-  }
-
-  if (String(rateBasisStatus).toUpperCase() === "CONFLICT") {
-    verdict = "ZERO";
-    gates.push({ gate: "rate_basis_status", status: "CONFLICT", note: "Rate basis conflict. Do not approve." });
-  } else if (String(rateBasisStatus).toUpperCase() === "MISSING" && ["invoice-audit", "cost-guard"].includes(moduleName)) {
-    verdict = "ZERO";
-    gates.push({ gate: "rate_basis_status", status: "MISSING", note: "Rate/source missing for invoice or Cost Guard. ZERO gate." });
-  } else {
-    gates.push({ gate: "rate_basis_status", status: String(rateBasisStatus), note: "Rate basis dry-run check completed." });
-  }
-
-  if (String(finalSubtotalStatus).toUpperCase() === "CONFLICT") {
-    verdict = maxVerdict(verdict, "FAIL");
-    gates.push({ gate: "final_subtotal_status", status: "CONFLICT", note: "Final subtotal conflicts with source." });
-  } else if (String(finalSubtotalStatus).toUpperCase() === "MISSING") {
-    verdict = maxVerdict(verdict, "AMBER");
-    gates.push({ gate: "final_subtotal_status", status: "MISSING", note: "Final subtotal before VAT is missing." });
-  } else {
-    gates.push({ gate: "final_subtotal_status", status: String(finalSubtotalStatus), note: "Final subtotal status dry-run check completed." });
-  }
-
-  if (verdict === "PASS" && gates.some((g) => String(g.status).includes("NOT_CHECKED"))) {
-    verdict = "PASS WITH WARNINGS";
-  }
-
+function bridgeGateResult(gate) {
+  // Backward-compatible wrapper around lib/gate.js checkGate() output.
+  // Adds dry_run, ontology_version, legacy `verdict` field, and audit_trace_id
+  // so existing GPT Instructions referencing `verdict` keep working.
   return {
     dry_run: true,
     ontology_version: DEFAULT_ONTOLOGY_VERSION,
-    verdict,
-    gates,
-    required_inputs_max_3: requiredInputsFor(verdict, moduleName),
+    verdict: gate.gate_result,            // legacy alias (v2.2.0 and earlier)
+    gate_result: gate.gate_result,        // canonical v2.3.0+
+    pass_allowed: gate.pass_allowed,
+    gates: gate.gates,
+    blocking: gate.blocking,
+    reviewer_action: gate.reviewer_action,
+    required_inputs_max_3: gate.required_inputs_max_3,
+    rule_source: gate.rule_source,
     audit_trace_id: makeId("TRACE"),
   };
-}
-
-function maxVerdict(a, b) {
-  const rank = { PASS: 0, "PASS WITH WARNINGS": 1, AMBER: 2, FAIL: 3, ZERO: 4 };
-  return (rank[b] > rank[a]) ? b : a;
-}
-
-function requiredInputsFor(verdict, moduleName) {
-  if (verdict === "ZERO") {
-    return ["Contract/rate basis source", "Evidence document reference", "Final approver decision"];
-  }
-  if (moduleName === "invoice-audit" || moduleName === "cost-guard") {
-    return ["Final invoice subtotal before VAT", "BOE/DO/BL/POD evidence", "Contract/rate basis source"];
-  }
-  return ["Valid SCT code", "Evidence status", "Module context"];
 }
 
 function crosswalkLine(sctCode, target) {

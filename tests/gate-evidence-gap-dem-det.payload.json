@@ -1,0 +1,11 @@
+{
+  "module": "invoice-audit",
+  "sct_codes": ["SCT.CHARGE.DETENTION"],
+  "subtotal": { "status": "MATCH", "amount": 500.00, "currency": "USD" },
+  "rate_basis": { "status": "MATCH", "source": "TARIFF" },
+  "evidence_status": [
+    { "sct_code": "SCT.CHARGE.DETENTION", "status": "PARTIAL", "document_ref_masked": "MASKED" }
+  ],
+  "evidence_gaps": ["EVIDENCE_GAP_DEM_DET"],
+  "type_b_tie_out": { "status": "TIED", "confidence_min": 0.85 }
+}

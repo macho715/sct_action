@@ -1,0 +1,11 @@
+{
+  "module": "invoice-audit",
+  "sct_codes": ["SCT.CHARGE.MASTER_DO"],
+  "subtotal": { "status": "MATCH", "amount": 250.00, "currency": "USD" },
+  "rate_basis": { "status": "MATCH", "source": "CONTRACT_NUMERIC" },
+  "evidence_status": [
+    { "sct_code": "SCT.CHARGE.MASTER_DO", "status": "MATCHED_EXACT", "document_ref_masked": "DO-MASKED-PASS" }
+  ],
+  "evidence_gaps": [],
+  "type_b_tie_out": { "status": "TIED", "confidence_min": 0.95 }
+}
