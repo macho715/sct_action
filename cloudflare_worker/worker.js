@@ -54,14 +54,26 @@
 //   OOG_STOWAGE_NOTES_MISSING, FINAL_RECON_NOT_DONE, APPROVAL_NOT_LINKED) → ZERO
 // - TYPE-B tie-out gate added (BROKEN → ZERO, PARTIAL → AMBER)
 // - Backward compatible: legacy flat input shape still accepted.
+//
+// v2.4.0 (Phase 5):
+// - Line_Audit field mapping: handleResolve output now carries 9 canonical
+//   fields per plan §Phase 5: sct_code, sct_class, document_type_code,
+//   rate_basis_code, type_b_rule_source, classification_confidence,
+//   evidence_status, gate_result, reviewer_action
+// - Legacy field names preserved as aliases (class→sct_class,
+//   confidence→classification_confidence, required_next_action→reviewer_action)
+// - perTermGateResult() helper: per-line gate evaluation (PASS / AMBER / ZERO)
+// - augmentLineAudit() helper: post-process mapping() to add canonical fields
+// - Backward compatible: every v2.3.0 client still receives the same legacy
+//   fields; new clients can rely on the 9 canonical Line_Audit field names.
 
 import { resolveDocumentType, resolveRateBasis, explainOntologyNode } from "./lib/ontology.js";
 import { classifyTypeB } from "./lib/type-b-classifier.js";
 import { getEvidenceRequirements, validateEvidence } from "./lib/evidence.js";
 import { checkGate } from "./lib/gate.js";
 
-const DEFAULT_ONTOLOGY_VERSION = "SCT-LOGI-2026.06-v2.3";
-const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.3.0";
+const DEFAULT_ONTOLOGY_VERSION = "SCT-LOGI-2026.06-v2.4";
+const PACKAGE_VERSION = "HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.4.0";
 
 const TYPE_B = Object.freeze({
   CUSTOMS: "Customs",
@@ -180,7 +192,7 @@ function handleResolve(body) {
     };
   }
 
-  const mappings = terms.map((term) => resolveTerm(term, context));
+  const mappings = terms.map((term) => resolveTerm(term, context)).map(augmentLineAudit);
 
   return {
     dry_run: true,
@@ -378,13 +390,13 @@ function resolveTerm(term, context) {
   // Phase 1 (v2.0.0): DocumentType ontology match (FR-001 to FR-004)
   const docMatch = resolveDocumentType(input);
   if (docMatch) {
-    return mapping(input, docMatch.code, docMatch.label, docMatch.sct_class, null, docMatch.confidence, "AMBER", `Verify ${docMatch.code} document and required evidence.`, "PARTIAL");
+    return mapping(input, docMatch.code, docMatch.label, docMatch.sct_class, null, docMatch.confidence, "AMBER", `Verify ${docMatch.code} document and required evidence.`, "PARTIAL", null, docMatch.code, null);
   }
 
   // Phase 1 (v2.0.0): RateBasis ontology match (FR-005 to FR-007)
   const rateMatch = resolveRateBasis(input);
   if (rateMatch) {
-    return mapping(input, rateMatch.code, rateMatch.label, rateMatch.sct_class, null, rateMatch.confidence, "AMBER", `Verify rate basis ${rateMatch.code} with supporting evidence.`, "MISSING");
+    return mapping(input, rateMatch.code, rateMatch.label, rateMatch.sct_class, null, rateMatch.confidence, "AMBER", `Verify rate basis ${rateMatch.code} with supporting evidence.`, "MISSING", null, null, rateMatch.code);
   }
 
   // Phase 2 (v2.1.0): Type-B classifier with override priority
@@ -411,7 +423,7 @@ function resolveTerm(term, context) {
   return mapping(input, "SCT.UNKNOWN", "Unresolved Term", "Unknown", TYPE_B.OTHERS, 0.30, "AMBER", "Manual review required. Provide shipment reference, charge description, or document reference.", "MISSING");
 }
 
-function mapping(inputTerm, sctCode, canonicalLabel, cls, typeB, confidence, risk, nextAction, evidenceStatus, ruleSource) {
+function mapping(inputTerm, sctCode, canonicalLabel, cls, typeB, confidence, risk, nextAction, evidenceStatus, ruleSource, documentTypeCode, rateBasisCode) {
   return {
     input_term: maskText(inputTerm),
     sct_code: sctCode,
@@ -423,7 +435,37 @@ function mapping(inputTerm, sctCode, canonicalLabel, cls, typeB, confidence, ris
     required_next_action: nextAction,
     evidence_status: evidenceStatus,
     type_b_rule_source: ruleSource || null,
+    document_type_code: documentTypeCode || null,
+    rate_basis_code: rateBasisCode || null,
     audit_trace_id: makeId("TRACE"),
+  };
+}
+
+// Per-line gate evaluation (Phase 5, v2.4.0). Used to populate the
+// canonical gate_result field on each resolve mapping. Differs from
+// lib/gate.js checkGate() (which is invoice-pack-level); this is
+// per-resolution-only and reflects how confident we are in the single term.
+function perTermGateResult(sctCode, evidenceStatus, confidence) {
+  const status = String(evidenceStatus ?? "").toUpperCase();
+  if (status === "CONFLICT") return "ZERO";
+  if (status === "MISSING" || status === "PARTIAL") return "AMBER";
+  if (sctCode === "SCT.UNKNOWN") return "AMBER";
+  if (Number(confidence) < 0.85) return "AMBER";
+  return "PASS";
+}
+
+// Phase 5 (v2.4.0): post-process a mapping() output to expose the 9 canonical
+// Line_Audit fields, while preserving every v2.3.0 legacy field as an alias.
+function augmentLineAudit(m) {
+  return {
+    ...m,
+    // Canonical v2.4.0+ names (preferred for new integrations)
+    sct_class: m.class,
+    classification_confidence: m.confidence,
+    gate_result: perTermGateResult(m.sct_code, m.evidence_status, m.confidence),
+    reviewer_action: m.required_next_action,
+    // Legacy v2.3.0 aliases kept for backward compatibility
+    // (class, confidence, required_next_action are already in m via spread)
   };
 }
 
