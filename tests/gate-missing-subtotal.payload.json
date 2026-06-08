@@ -1,0 +1,30 @@
+{
+  "module": "invoice-audit",
+  "sct_codes": [
+    "SCT.CHARGE.CUSTOMS_CLEARANCE",
+    "SCT.CHARGE.MASTER_DO"
+  ],
+  "subtotal": {
+    "status": "MISSING",
+    "amount": null,
+    "currency": "USD"
+  },
+  "rate_basis": {
+    "status": "MATCH",
+    "source": "CONTRACT_NUMERIC"
+  },
+  "evidence_status": [
+    { "sct_code": "SCT.CHARGE.CUSTOMS_CLEARANCE", "status": "MATCHED_EXACT", "document_ref_masked": "BOE-MASKED-001" },
+    { "sct_code": "SCT.CHARGE.MASTER_DO", "status": "MATCHED_EXACT", "document_ref_masked": "DO-MASKED-001" }
+  ],
+  "evidence_gaps": [],
+  "type_b_tie_out": {
+    "status": "TIED",
+    "confidence_min": 0.90
+  },
+  "context": {
+    "module": "invoice-audit",
+    "shipment_no_masked": "HVDC-ADOPT-SCT-0180",
+    "currency": "USD"
+  }
+}
