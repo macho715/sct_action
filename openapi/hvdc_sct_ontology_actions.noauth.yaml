@@ -1,9 +1,22 @@
 openapi: 3.1.0
 info:
   title: HVDC SCT Ontology + DSV Invoice Audit Dry-Run Actions
-  version: 2.2.0
-  description: Private internal dry-run/read-only API schema for GPT Actions. No invoice
-    approval, payment, ERP/TMS/WMS mutation, or raw contract-rate disclosure is allowed.
+  version: 2.5.0
+  description: |
+    Private internal dry-run/read-only API schema for GPT Actions.
+    No invoice approval, payment, ERP/TMS/WMS mutation, or raw contract-rate
+    disclosure is allowed.
+
+    ## Versioning
+    - v2.5.0 (Phase 6): OpenAPI & GPTS Instructions alignment
+      * SctMapping extended to 9 canonical Line_Audit fields
+      * sct_class, classification_confidence, gate_result, reviewer_action
+        are canonical; class, confidence, required_next_action are deprecated aliases
+    - v2.4.0 (Phase 5): Line_Audit field mapping
+    - v2.3.0 (Phase 4): Gate Check blockers (final subtotal, rate basis, gaps)
+    - v2.2.0 (Phase 3): Evidence Map
+    - v2.1.0 (Phase 2): Customs Inspection override
+    - v2.0.0 (Phase 1): DocumentType + RateBasis ontology seed
 servers:
 - url: https://hvdc-ontology-chatgpt-app.mscho715.workers.dev
   description: HVDC SCT Ontology Worker root endpoint.
@@ -610,24 +623,81 @@ components:
       - input_term
       - sct_code
       - canonical_label
-      - class
-      - confidence
-      - risk
+      - sct_class
+      - classification_confidence
+      - gate_result
+      - reviewer_action
       properties:
         input_term:
           type: string
+          description: Masked input term (PHONE/EMAIL redacted).
         sct_code:
           type: string
+          description: Canonical SCT ontology code (Phase 1+ — DocumentType/RateBasis/ChargeType).
+          example: SCT.CHARGE.CUSTOMS_INSPECTION
         canonical_label:
           type: string
-        class:
+          description: Human-readable canonical label.
+        sct_class:
           type: string
+          description: '[Phase 5/v2.4.0+] Canonical class. Alias of legacy `class`.'
+          enum:
+          - DocumentType
+          - RateBasis
+          - ChargeType
+          - Shipment
+          - InvoiceReference
+          - Unknown
+        document_type_code:
+          type: string
+          nullable: true
+          description: '[Phase 5/v2.4.0+] SCT.DOC.* code if input is a document, else null.'
+          example: SCT.DOC.BOE
+        rate_basis_code:
+          type: string
+          nullable: true
+          description: '[Phase 5/v2.4.0+] SCT.RATE.* code if input is a rate basis, else null.'
+          example: SCT.RATE.AT_COST
         type_b:
           type: string
-        confidence:
+          description: TYPE-B classification (Phase 2/v2.1.0+).
+        type_b_rule_source:
+          type: string
+          nullable: true
+          description: '[Phase 5/v2.4.0+] Rule source that produced type_b (OVERRIDE / FALLBACK_KEYWORD / FALLBACK_DEFAULT).'
+          enum:
+          - OVERRIDE
+          - FALLBACK_KEYWORD
+          - FALLBACK_DEFAULT
+          example: OVERRIDE
+        classification_confidence:
           type: number
           minimum: 0
           maximum: 1
+          description: '[Phase 5/v2.4.0+] Confidence score 0-1. Alias of legacy `confidence`.'
+        gate_result:
+          type: string
+          description: '[Phase 5/v2.4.0+] Per-line gate evaluation. PASS=resolved with high confidence, AMBER=uncertain/reviewable, ZERO=conflict or blocker.'
+          enum:
+          - PASS
+          - AMBER
+          - ZERO
+        evidence_status:
+          type: string
+          description: '[Phase 3/v2.2.0+] Evidence status (MATCHED_EXACT / PARTIAL / MISSING / CONFLICT / NOT_CHECKED).'
+        reviewer_action:
+          type: string
+          description: '[Phase 5/v2.4.0+] Next reviewer action. Alias of legacy `required_next_action`.'
+        # Legacy v2.3.0 fields (kept for backward compatibility)
+        class:
+          type: string
+          description: '[DEPRECATED v2.4.0] Use `sct_class` instead.'
+        confidence:
+          type: number
+          description: '[DEPRECATED v2.4.0] Use `classification_confidence` instead.'
+        required_next_action:
+          type: string
+          description: '[DEPRECATED v2.4.0] Use `reviewer_action` instead.'
         risk:
           type: string
           enum:
@@ -635,10 +705,6 @@ components:
           - AMBER
           - HIGH
           - ZERO
-        required_next_action:
-          type: string
-        evidence_status:
-          type: string
         audit_trace_id:
           type: string
     SctNode:
