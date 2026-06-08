@@ -180,6 +180,22 @@ assert_golden_tc "TC-GATE-004 gate_result" "PASS" "$actual_gate"
 assert_golden_tc "TC-GATE-004 pass_allowed" "true" "$actual_pass"
 
 echo
+echo "2a) Golden TC-LA-001: 9 canonical Line_Audit fields present on each mapping"
+response=$(curl -sS -X POST "$BASE_URL/ontology/resolve" \
+  -H "Content-Type: application/json" \
+  "${auth_args[@]}" \
+  --data @tests/resolve-line-audit.payload.json)
+echo "$response" | jq '.mappings[] | {input_term, sct_code, sct_class, document_type_code, rate_basis_code, type_b_rule_source, classification_confidence, evidence_status, gate_result, reviewer_action}'
+required_fields=("sct_code" "sct_class" "document_type_code" "rate_basis_code" "type_b_rule_source" "classification_confidence" "evidence_status" "gate_result" "reviewer_action")
+mapping_count=$(echo "$response" | jq '.mappings | length')
+for i in $(seq 0 $((mapping_count - 1))); do
+  for field in "${required_fields[@]}"; do
+    actual=$(echo "$response" | jq -r ".mappings[$i] | has(\"$field\")")
+    assert_golden_tc "TC-LA-001 mapping[$i].$field" "true" "$actual"
+  done
+done
+
+echo
 echo "10) dryRunClassifyTypeB"
 curl -sS -X POST "$BASE_URL/dry-run/type-b-classify" \
   -H "Content-Type: application/json" \
@@ -257,4 +273,4 @@ curl -sS -X POST "$BASE_URL/ontology/audit-trace" \
   -d '{"request_id":"REQ-TEST","verdict":"AMBER","module":"invoice-audit"}' | jq .
 
 echo
-echo "Phase 1 + 2 + 3 + 4 smoke tests complete. (15 Golden TC assertions + 10 routes)"
+echo "Phase 1 + 2 + 3 + 4 + 5 smoke tests complete. (21+ Golden TC assertions + 10 routes)"
