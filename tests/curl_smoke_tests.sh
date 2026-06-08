@@ -143,7 +143,7 @@ response=$(curl -sS -X POST "$BASE_URL/ontology/gate-check" \
   --data @tests/gate-missing-subtotal.payload.json)
 echo "$response" | jq .
 actual_gate=$(echo "$response" | jq -r '.gate_result // empty')
-actual_pass=$(echo "$response" | jq -r '.pass_allowed // empty')
+actual_pass=$(echo "$response" | jq -r '.pass_allowed | tostring')
 assert_golden_tc "TC-GATE-001 gate_result" "ZERO" "$actual_gate"
 assert_golden_tc "TC-GATE-001 pass_allowed" "false" "$actual_pass"
 
@@ -175,7 +175,7 @@ response=$(curl -sS -X POST "$BASE_URL/ontology/gate-check" \
   --data @tests/gate-pass.payload.json)
 echo "$response" | jq .
 actual_gate=$(echo "$response" | jq -r '.gate_result // empty')
-actual_pass=$(echo "$response" | jq -r '.pass_allowed // empty')
+actual_pass=$(echo "$response" | jq -r '.pass_allowed | tostring')
 assert_golden_tc "TC-GATE-004 gate_result" "PASS" "$actual_gate"
 assert_golden_tc "TC-GATE-004 pass_allowed" "true" "$actual_pass"
 
