@@ -197,3 +197,52 @@ See design doc §13 for full mapping. All 15 SC must be GREEN by Phase 7.
 - Plan: `docs/SCT_ONTOLOGY_IMPROVEMENT_EXECUTION_PLAN.md`
 - Global rules: `~/.claude/CLAUDE.md` (HVDC SCM domain)
 - Project rules: `CLAUDE.md` (HVDC SCT Ontology GPT Actions)
+
+
+## Codex Documentation Update — 2026-06-08
+
+**Update policy:** existing content above this section is preserved. This section records the root-document refresh after the Phase 1 through Phase 7 SCT Ontology implementation.
+
+### Current Completion Snapshot
+
+| Phase | Commit | Status | Summary |
+|---|---|---:|---|
+| Phase 1 | `23aed2c` | Done | Ontology seed for DocumentType and RateBasis. |
+| Phase 2 | `12223da` | Done | Customs Inspection override priority. |
+| Phase 3 | `6a12bdf` | Done | Evidence map validation. |
+| Phase 4 | `bfdc885` | Done | Gate-check blockers for subtotal, rate basis, evidence gaps, and tie-out. |
+| Phase 5-7 | `d51e062` | Done | Line_Audit, OpenAPI/GPTS alignment, and regression batch. |
+
+### Runtime Surface
+
+- Worker URL: `https://hvdc-ontology-chatgpt-app.mscho715.workers.dev`
+- Worker entrypoint: `cloudflare_worker/worker.js`
+- Runtime health observed during documentation update: `HVDC-SCT-ONTOLOGY-GPT-ACTIONS-REST-v2.4.0`
+- Supported routes: 9
+- OpenAPI schema files: `openapi/hvdc_sct_ontology_actions.noauth.yaml`, `openapi/hvdc_sct_ontology_actions.apikey.yaml`
+
+### Documentation Surface
+
+- Root overview: `README.md`
+- Architecture: `SYSTEM_ARCHITECTURE.md`
+- Layout: `LAYOUT.md`
+- Changelog: `CHANGELOG.md`
+- Deployment report: `docs/superpowers/reports/2026-06-08-sct-ontology-deployment.md`
+- GPTS router instructions: `gpts/GPT_INSTRUCTIONS_SCT_ONTOLOGY_ROUTER.md`
+
+### Mermaid graph
+
+```mermaid
+flowchart LR
+  Plan[7 phase plan] --> Implement[Worker and schema changes]
+  Implement --> Test[Local and live assertions]
+  Test --> Deploy[Cloudflare Worker]
+  Deploy --> Docs[Root docs refresh]
+  Docs --> GPTS[GPT Builder preview verification]
+```
+
+### Verification Notes
+
+- Root documents were reviewed before commit.
+- Internal local cache paths and non-runtime generated artifacts are intentionally excluded from this plan section.
+- Keep final GPTS verification separate from local code and deployment verification.
